@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#ddd9d5", "outline": "#727973", "on-tertiary-container": "#d6952f", "on-secondary": "#ffffff", "error": "#ba1a1a", "surface-tint": "#446651", "on-surface-variant": "#424843", "secondary-container": "#ff9475", "surface-variant": "#e6e2dd", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "primary-fixed-dim": "#aacfb6", "inverse-surface": "#31302d", "inverse-on-surface": "#f4f0eb", "on-surface": "#1c1c19", "outline-variant": "#c1c8c1", "tertiary-container": "#503200", "on-primary-container": "#86aa93", "on-primary-fixed": "#002111", "surface-container-highest": "#e6e2dd", "on-primary-fixed-variant": "#2c4e3b", "tertiary": "#331e00", "surface-bright": "#fdf9f4", "primary": "#062919", "secondary-fixed-dim": "#ffb5a0", "on-secondary-fixed-variant": "#7b2e17", "surface-container-low": "#f7f3ee", "inverse-primary": "#aacfb6", "secondary": "#99452c", "on-background": "#1c1c19", "tertiary-fixed": "#ffddb4", "surface-container": "#f1ede8", "on-tertiary-fixed": "#291800", "on-error": "#ffffff", "primary-fixed": "#c6ecd2", "background": "#fdf9f4", "on-tertiary-fixed-variant": "#633f00", "error-container": "#ffdad6", "on-primary": "#ffffff", "on-secondary-fixed": "#3b0900", "secondary-fixed": "#ffdbd1", "primary-container": "#1e3f2d", "on-secondary-container": "#762b14", "tertiary-fixed-dim": "#ffb955", "surface": "#fdf9f4", "surface-container-high": "#ece7e3", "on-error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1.25rem", "space-sm": "0.5rem", "gutter": "0.875rem", "space-xl": "1.75rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-lg": "1.25rem", "space-md": "0.875rem", "gutter-mobile": "0.75rem" }, "fontFamily": { "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "800" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-xl-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700" }], "headline-xl": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_2px_12px_rgba(44,43,40,0.05)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="JelajahKita Game Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Ui4U_FO1PcnqV2yZK9IK-8Z472gC9GprVgFNp9eG-X6nZ1KCK8MEmphSIazEpZGdff2zgDqYkjlYcN-oqUILCZAGxvG0r5vY54VkQUADi5AAJoA2cDl9xHLfxdloWfA8PspNuf4qm8bwiXRbLUt-trcCKRAxlZodFTj-9pdLEvlfQ367obH3VWJaCKiYTbeDTlKW50lD_oK9HW-nizrewFbtaDtUTZ5Figc65gv4OvDDAgVUSWo1KrvEM"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight leading-none">JelajahKita</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Meja Petualangan</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Buka Audio Cerita" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant active:scale-95 transition-transform hover:text-on-surface hover:bg-surface-container-high"><span class="material-symbols-outlined text-[22px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_0_#13281d]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 px-margin-mobile bg-surface"><div class="flex flex-col w-full pb-6 select-none">
+<!-- Top Tabletop HUD Bar -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<!-- Turn Ribbon & Round Pill -->
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-low p-space-sm rounded-xl shadow-[0_2px_0_#ddd9d5,0_4px_8px_rgba(44,43,40,0.04)]">
+<!-- Active Player Badge -->
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="relative flex-shrink-0">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm shadow-[0_3px_0_#002111,0_4px_6px_rgba(6,41,25,0.3)] ring-2 ring-tertiary-fixed-dim ring-offset-2 ring-offset-surface-container-low animate-pulse">
+            M
+          </div>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary-fixed-dim text-on-tertiary-fixed rounded-full flex items-center justify-center text-[10px] font-bold shadow-[0_1px_2px_rgba(0,0,0,0.2)]">★</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider leading-none">Giliran Petualang</span>
+<span class="font-headline-sm text-headline-sm text-primary truncate leading-tight mt-0.5">Papa Maryono</span>
+</div>
+</div>
+<!-- Round Info & Modal Trigger -->
+<div class="flex items-center gap-space-xs">
+<div class="flex flex-col items-end">
+<span class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-1 rounded-full text-on-surface font-label-sm text-label-sm shadow-[0_1px_0_#ddd9d5]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Langkah 8
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px] mt-0.5">Misi Harmoni</span>
+</div>
+<button aria-label="Buka Aturan Main" class="w-9 h-9 rounded-xl bg-surface-container-high active:translate-y-0.5 shadow-[0_2px_0_#ddd9d5] flex items-center justify-center text-on-surface-variant hover:text-primary transition-all" id="ruleModalBtn">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</button>
+</div>
+</div>
+<!-- Cooperative Milestone Tracker Bar -->
+<div class="bg-surface-container-high/60 p-space-xs rounded-xl flex items-center justify-between gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 pl-1">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">temple_buddhist</span> Pos Harapan
+      </span>
+<div class="flex items-center gap-1">
+<div class="w-3 h-3 rounded-full bg-primary shadow-[0_1px_0_#002111]"></div>
+<div class="w-3 h-3 rounded-full bg-primary shadow-[0_1px_0_#002111]"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container shadow-[0_1px_0_#b97f29] animate-bounce"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-dim"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-dim"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-dim"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold pr-1">Pos 3 / 6</span>
+</div>
+</div>
+<!-- The Living Board Canvas (Wooden Frame & Linen Cardstock Plate) -->
+<div class="relative w-full rounded-2xl bg-surface-container p-2.5 shadow-[0_4px_0_#c1c8c1,0_12px_24px_rgba(44,43,40,0.12)] overflow-hidden">
+<!-- Linen & Grain Decorative Underlay (SVG) -->
+<div class="absolute inset-0 opacity-15 pointer-events-none">
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="12" id="linen-grid" patternunits="userSpaceOnUse" width="12">
+<path d="M 0 12 L 12 0 M 0 0 L 12 12" fill="none" stroke="#727973" stroke-opacity="0.3" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#linen-grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<!-- Center Tabletop Watermark Emblem -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
+<span class="material-symbols-outlined text-[200px] text-primary">explore</span>
+</div>
+<!-- SVG Organic S-Curve Connection Path connecting 28 physical tiles -->
+<!-- Viewport based on 7 columns x 4 rows matrix -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-0 px-3 py-3" fill="none" viewbox="0 0 350 480">
+<!-- Path: Start at (25, 420) -> goes Right to (325, 420) -> Curves up to (325, 300) -> goes Left to (25, 300) -> Curves up to (25, 180) -> goes Right to (325, 180) -> Curves up to (325, 60) -> goes Left to FINISH (25, 60) -->
+<path d="M 25 420 
+               L 325 420 
+               C 365 420, 365 300, 325 300
+               L 25 300 
+               C -15 300, -15 180, 25 180
+               L 325 180 
+               C 365 180, 365 60, 325 60
+               L 25 60" stroke="#c1c8c1" stroke-dasharray="6 8" stroke-linecap="round" stroke-width="4"></path>
+<!-- Completed Glow Trail up to tile 8 -->
+<path d="M 25 420 
+               L 325 420 
+               C 365 420, 365 300, 325 300
+               L 275 300" stroke="#ff9475" stroke-linecap="round" stroke-opacity="0.65" stroke-width="4"></path>
+</svg>
+<!-- 7 Columns x 4 Rows Tactile Grid (28 Total Tiles) -->
+<!-- Row 4 (Bottom: Start Tile 1 to Tile 7, Left to Right) -->
+<!-- Row 3 (Tile 14 to Tile 8, Right to Left) -->
+<!-- Row 2 (Tile 15 to Tile 21, Left to Right) -->
+<!-- Row 1 (Top: Finish Tile 28 to Tile 22, Right to Left) -->
+<div class="relative z-10 grid grid-cols-7 gap-1.5 sm:gap-2">
+<!-- ================= ROW 1 (TOP: Finish at Tile 28 on left) ================= -->
+<!-- Tile 28: FINISH (Golden Beacon / Home) -->
+<div class="col-span-2 relative aspect-[2/1] rounded-xl bg-tertiary-fixed flex flex-col items-center justify-center p-1 shadow-[0_3px_0_#d6952f,0_6px_10px_rgba(44,43,40,0.1)] text-on-tertiary-fixed active:scale-95 transition-transform cursor-pointer" onclick="inspectTile('FINISH - Rumah Bersama', 'Puncak kebahagiaan ekspedisi keluarga! Rayakan kekompakan kalian dengan pelukan hangat bersama.')">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">holiday_village</span>
+<span class="font-label-sm text-[10px] font-bold tracking-tight">FINISH</span>
+</div>
+<span class="text-[9px] font-label-sm text-tertiary-container leading-none">Rumah Kasih</span>
+<span class="absolute -top-1.5 -left-1.5 bg-primary text-on-primary text-[8px] font-bold px-1.5 rounded-full shadow-[0_1px_0_#002111]">28</span>
+</div>
+<!-- Tile 27: HATI -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-secondary" onclick="inspectTile('Ruang Hati #27', 'Bagikan rasa syukur atas hal paling berharga dari keluarga pekan ini.')">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">27</span>
+</div>
+<!-- Tile 26: MAJU 2 -->
+<div class="relative aspect-square rounded-xl bg-secondary-fixed flex flex-col items-center justify-center shadow-[0_2px_0_#ff9475,0_4px_6px_rgba(44,43,40,0.06)] text-on-secondary-fixed" onclick="inspectTile('Lompatan Kilat #26', 'Energi kekompakan melimpah! Regu melompat 2 petak ke depan.')">
+<span class="text-[11px] font-headline-sm font-extrabold text-secondary">+2</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none">26</span>
+</div>
+<!-- Tile 25: CERITA -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-tertiary-container" onclick="inspectTile('Buku Kenangan #25', 'Buka lembaran rahasia: Hal lucu apa yang pernah terjadi saat liburan keluarga?')">
+<span class="material-symbols-outlined text-[15px]">auto_stories</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">25</span>
+</div>
+<!-- Tile 24: AKSI -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-surface-tint" onclick="inspectTile('Tantangan Aksi #24', 'Lakukan tos bersama bergaya unik dengan semua anggota keluarga!')">
+<span class="material-symbols-outlined text-[15px]">back_hand</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">24</span>
+</div>
+<!-- Tile 23: MIMPI -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-primary-container" onclick="inspectTile('Bintang Cita #23', 'Sebutkan satu destinasi impian yang ingin didatangi bersama kelak.')">
+<span class="material-symbols-outlined text-[15px]">wb_cloudy</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">23</span>
+</div>
+<!-- Tile 22: JALUR -->
+<div class="relative aspect-square rounded-xl bg-surface-container-low flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5] text-outline" onclick="inspectTile('Langkah Santai #22', 'Tarik napas sejenak, regu berjalan harmonis menikmati pemandangan.')">
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-1">22</span>
+</div>
+<!-- ================= ROW 2 (Tile 15 to Tile 21, Left to Right) ================= -->
+<!-- Tile 15: MIMPI -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-primary-container" onclick="inspectTile('Pohon Harapan #15', 'Tuliskan satu doa manis untuk anggota keluarga di sebelah kirimu.')">
+<span class="material-symbols-outlined text-[15px]">nights_stay</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">15</span>
+</div>
+<!-- Tile 16: KEMBALI 1 -->
+<div class="relative aspect-square rounded-xl bg-error-container/40 flex flex-col items-center justify-center shadow-[0_2px_0_#ffdad6] text-error" onclick="inspectTile('Peringatan Lembut #16', 'Ransel terjatuh sejenak, mundur 1 langkah untuk merapikan kembali bekal.')">
+<span class="text-[10px] font-headline-sm font-bold">-1</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none">16</span>
+</div>
+<!-- Tile 17: HATI -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-secondary" onclick="inspectTile('Ruang Hati #17', 'Katakan satu pujian yang tulus untuk masakan atau senyuman Ibu.')">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">17</span>
+</div>
+<!-- Tile 18: CERITA -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-tertiary-container" onclick="inspectTile('Jejak Lampau #18', 'Ceritakan mainan paling berkesan saat kamu masih kanak-kanak.')">
+<span class="material-symbols-outlined text-[15px]">psychology_alt</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">18</span>
+</div>
+<!-- Tile 19: JALUR -->
+<div class="relative aspect-square rounded-xl bg-surface-container-low flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5] text-outline" onclick="inspectTile('Langkah Damai #19', 'Setiap jejak membawa kita semakin dekat ke Rumah Kasih.')">
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-1">19</span>
+</div>
+<!-- Tile 20: AKSI -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-surface-tint" onclick="inspectTile('Gerak Kompak #20', 'Semua pemain tirukan suara hewan favorit secara bersamaan!')">
+<span class="material-symbols-outlined text-[15px]">flare</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">20</span>
+</div>
+<!-- Tile 21: MAJU 2 -->
+<div class="relative aspect-square rounded-xl bg-secondary-fixed flex flex-col items-center justify-center shadow-[0_2px_0_#ff9475,0_4px_6px_rgba(44,43,40,0.06)] text-on-secondary-fixed" onclick="inspectTile('Bonus Semangat #21', 'Kompak dan gembira! Maju 2 petak langsung.')">
+<span class="text-[11px] font-headline-sm font-extrabold text-secondary">+2</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none">21</span>
+</div>
+<!-- ================= ROW 3 (Tile 14 to Tile 8, Right to Left) ================= -->
+<!-- Tile 14: CERITA -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-tertiary-container" onclick="inspectTile('Kilas Kisah #14', 'Kisah dongeng atau petuah apa yang paling sering diceritakan kakek/nenek?')">
+<span class="material-symbols-outlined text-[15px]">import_contacts</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">14</span>
+</div>
+<!-- Tile 13: AKSI -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-surface-tint" onclick="inspectTile('Aksi Saling Tolong #13', 'Tawarkan pijatan pundak ringan selama 15 detik kepada pemain di kananmu.')">
+<span class="material-symbols-outlined text-[15px]">handshake</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">13</span>
+</div>
+<!-- Tile 12: MIMPI -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-primary-container" onclick="inspectTile('Langit Malam #12', 'Bila kita punya pintu ajaib besok pagi, ke mana kita ingin sarapan?')">
+<span class="material-symbols-outlined text-[15px]">cloud_queue</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">12</span>
+</div>
+<!-- Tile 11: JALUR -->
+<div class="relative aspect-square rounded-xl bg-surface-container-low flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5] text-outline" onclick="inspectTile('Jalur Teduh #11', 'Langkah mantap! Angin sejuk meniup rasa lelah.')">
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-1">11</span>
+</div>
+<!-- Tile 10: HATI -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-secondary" onclick="inspectTile('Detak Rasa #10', 'Apa satu hal kecil yang dilakukan keluargamu yang selalu membuatmu tersenyum?')">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">10</span>
+</div>
+<!-- Tile 9: JALUR -->
+<div class="relative aspect-square rounded-xl bg-surface-container-low flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5] text-outline" onclick="inspectTile('Titian Batu #9', 'Berjalan beriringan dengan langkah pasti.')">
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-1">9</span>
+</div>
+<!-- Tile 8: CERITA [ACTIVE TILE: PAPA MARYONO & DIKA RESIDE HERE] -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center ring-2 ring-primary ring-offset-2 ring-offset-surface-container shadow-[0_3px_0_#d9cbb0,0_6px_12px_rgba(30,63,45,0.15)] text-tertiary cursor-pointer active:scale-95 transition-transform" onclick="inspectTile('Petak 8: CERITA (Posisi Aktif)', 'Papa Maryono & Dika sedang berada di sini! Buka misteri cerita masa kecil ayah.')">
+<span class="material-symbols-outlined text-[15px] text-tertiary-container">auto_stories</span>
+<span class="text-[8px] font-label-sm text-primary font-extrabold leading-none mt-0.5">8</span>
+<!-- Physical Pawn: MARYONO (Forest Green 'M') -->
+<div class="absolute -top-3.5 -left-2 z-20 transition-transform transform hover:scale-110">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm text-[12px] shadow-[0_3px_0_#002111,0_4px_6px_rgba(0,0,0,0.35)] ring-1.5 ring-surface-bright">
+            M
+          </div>
+<div class="w-4 h-1 rounded-full bg-inverse-surface/30 mx-auto mt-0.5 blur-[0.5px]"></div>
+</div>
+<!-- Physical Pawn: DIKA (Soft Terracotta 'D') Offset naturally beside Maryono -->
+<div class="absolute -top-3.5 -right-2 z-20 transition-transform transform hover:scale-110">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-[11px] shadow-[0_3px_0_#7b2e17,0_4px_6px_rgba(0,0,0,0.3)] ring-1.5 ring-surface-bright">
+            D
+          </div>
+<div class="w-3.5 h-1 rounded-full bg-inverse-surface/30 mx-auto mt-0.5 blur-[0.5px]"></div>
+</div>
+</div>
+<!-- ================= ROW 4 (BOTTOM: Start Tile 1 to Tile 7, Left to Right) ================= -->
+<!-- Tile 1: START (Green Flag) -->
+<div class="relative aspect-square rounded-xl bg-primary-fixed flex flex-col items-center justify-center shadow-[0_2px_0_#aacfb6,0_4px_6px_rgba(6,41,25,0.1)] text-on-primary-fixed cursor-pointer" onclick="inspectTile('Titik START', 'Langkah awal perjalanan keluarga. Bersama kita kuat, melangkah dengan gembira!')">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">flag</span>
+<span class="text-[8px] font-label-sm font-bold text-on-primary-fixed leading-none mt-0.5">START</span>
+</div>
+<!-- Tile 2: JALUR -->
+<div class="relative aspect-square rounded-xl bg-surface-container-low flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5] text-outline" onclick="inspectTile('Langkah Mula #2', 'Pijakan pertama menuju petualangan hangat.')">
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-1">2</span>
+</div>
+<!-- Tile 3: CERITA -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-tertiary-container" onclick="inspectTile('Kisah Pagi #3', 'Apa aroma sarapan yang paling mengingatkanmu pada rumah?')">
+<span class="material-symbols-outlined text-[15px]">menu_book</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">3</span>
+</div>
+<!-- Tile 4: AKSI [TOKEN SITI / BLUE 'S'] -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-surface-tint cursor-pointer" onclick="inspectTile('Petak 4: AKSI (Pion Kak Siti)', 'Kak Siti sedang di petak ini: Beri pelukan hangat untuk Papa atau Mama!')">
+<span class="material-symbols-outlined text-[15px]">directions_run</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">4</span>
+<!-- Physical Pawn: SITI (Lake Blue 'S') -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
+<div class="w-6 h-6 rounded-full bg-surface-tint text-on-primary flex items-center justify-center font-headline-sm text-[11px] shadow-[0_3px_0_#2c4e3b,0_4px_6px_rgba(0,0,0,0.3)] ring-1.5 ring-surface-bright">
+            S
+          </div>
+<div class="w-3.5 h-1 rounded-full bg-inverse-surface/30 mx-auto mt-0.5 blur-[0.5px]"></div>
+</div>
+</div>
+<!-- Tile 5: MIMPI -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-primary-container" onclick="inspectTile('Angan Bahagia #5', 'Bila besok boleh memilih liburan seharian tanpa gadget, apa yang ingin kita buat?')">
+<span class="material-symbols-outlined text-[15px]">wb_twilight</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">5</span>
+</div>
+<!-- Tile 6: HATI [TOKEN MAMA AYU / AMBER 'A'] -->
+<div class="relative aspect-square rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-[0_2px_0_#ddd9d5,0_4px_6px_rgba(44,43,40,0.05)] text-secondary cursor-pointer" onclick="inspectTile('Petak 6: HATI (Pion Mama Ayu)', 'Mama Ayu di sini: Katakan satu hal manis yang membuat hatimu bergetar gembira hari ini.')">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none mt-0.5">6</span>
+<!-- Physical Pawn: AYU (Warm Amber 'A') -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-sm text-[11px] shadow-[0_3px_0_#b97f29,0_4px_6px_rgba(0,0,0,0.3)] ring-1.5 ring-surface-bright font-bold">
+            A
+          </div>
+<div class="w-3.5 h-1 rounded-full bg-inverse-surface/30 mx-auto mt-0.5 blur-[0.5px]"></div>
+</div>
+</div>
+<!-- Tile 7: MAJU 2 -->
+<div class="relative aspect-square rounded-xl bg-secondary-fixed flex flex-col items-center justify-center shadow-[0_2px_0_#ff9475,0_4px_6px_rgba(44,43,40,0.06)] text-on-secondary-fixed" onclick="inspectTile('Laju Kilas #7', 'Kompak dan sigap! Regu bergerak maju 2 langkah.')">
+<span class="text-[11px] font-headline-sm font-extrabold text-secondary">+2</span>
+<span class="text-[8px] font-label-sm text-on-surface-variant font-bold leading-none">7</span>
+</div>
+</div>
+<!-- Category Pill Legend at Board Bottom -->
+<div class="mt-3 pt-2.5 flex items-center justify-between gap-1 overflow-x-auto text-[10px] font-label-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-full shadow-[0_1px_0_#ddd9d5]">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Hati
+      </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-full shadow-[0_1px_0_#ddd9d5]">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span> Cerita
+      </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-full shadow-[0_1px_0_#ddd9d5]">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Mimpi
+      </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-full shadow-[0_1px_0_#ddd9d5]">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span> Aksi
+      </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-low px-2 py-0.5 rounded-full shadow-[0_1px_0_#ddd9d5]">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span> Bonus
+      </span>
+</div>
+</div>
+<!-- Player Pawns Roster Dock -->
+<div class="grid grid-cols-4 gap-space-xs mt-space-sm">
+<!-- Maryono -->
+<div class="bg-surface-container-low p-2 rounded-xl flex flex-col items-center text-center shadow-[0_2px_0_#ddd9d5] ring-2 ring-primary">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center shadow-[0_1px_0_#002111]">M</div>
+<span class="font-label-sm text-[11px] text-primary font-bold mt-1 truncate w-full">Maryono</span>
+<span class="text-[9px] font-label-sm text-on-surface-variant leading-none">Petak 8</span>
+</div>
+<!-- Ayu -->
+<div class="bg-surface-container-low p-2 rounded-xl flex flex-col items-center text-center shadow-[0_2px_0_#ddd9d5]">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold flex items-center justify-center shadow-[0_1px_0_#b97f29]">A</div>
+<span class="font-label-sm text-[11px] text-on-surface font-bold mt-1 truncate w-full">Ayu</span>
+<span class="text-[9px] font-label-sm text-on-surface-variant leading-none">Petak 6</span>
+</div>
+<!-- Dika -->
+<div class="bg-surface-container-low p-2 rounded-xl flex flex-col items-center text-center shadow-[0_2px_0_#ddd9d5]">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center justify-center shadow-[0_1px_0_#7b2e17]">D</div>
+<span class="font-label-sm text-[11px] text-on-surface font-bold mt-1 truncate w-full">Dika</span>
+<span class="text-[9px] font-label-sm text-on-surface-variant leading-none">Petak 8</span>
+</div>
+<!-- Siti -->
+<div class="bg-surface-container-low p-2 rounded-xl flex flex-col items-center text-center shadow-[0_2px_0_#ddd9d5]">
+<div class="w-6 h-6 rounded-full bg-surface-tint text-on-primary text-[10px] font-bold flex items-center justify-center shadow-[0_1px_0_#2c4e3b]">S</div>
+<span class="font-label-sm text-[11px] text-on-surface font-bold mt-1 truncate w-full">Siti</span>
+<span class="text-[9px] font-label-sm text-on-surface-variant leading-none">Petak 4</span>
+</div>
+</div>
+<!-- Bottom Interactive Rolling Area (Physical 3D Dice & Action Button) -->
+<div class="mt-space-md flex flex-col items-center bg-surface-container-low p-space-md rounded-2xl shadow-[0_4px_0_#ddd9d5,0_8px_16px_rgba(44,43,40,0.06)]">
+<!-- Physical Six-Sided 3D Die & Prompt -->
+<div class="flex items-center justify-center gap-space-lg w-full mb-space-md">
+<!-- 3D Tactile Die Container -->
+<button aria-label="Kocok Dadu" class="relative group cursor-pointer focus:outline-none transition-transform active:scale-90 active:rotate-12 duration-150" id="diceElement">
+<!-- 3D Die Cube Face (Showing 4 deep forest green pips) -->
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest p-2.5 flex flex-col justify-between shadow-[0_6px_0_#c1c8c1,0_10px_20px_rgba(44,43,40,0.18)] transition-all group-active:shadow-[0_2px_0_#c1c8c1] group-active:translate-y-1">
+<!-- Pip Row 1 -->
+<div class="flex justify-between items-center w-full">
+<span class="w-3 h-3 rounded-full bg-primary shadow-inner inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary shadow-inner inline-block"></span>
+</div>
+<!-- Pip Row 2 -->
+<div class="flex justify-between items-center w-full">
+<span class="w-3 h-3 rounded-full bg-primary shadow-inner inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary shadow-inner inline-block"></span>
+</div>
+</div>
+<!-- Shadow base underneath die -->
+<div class="w-12 h-2 rounded-full bg-inverse-surface/20 mx-auto mt-2 blur-[1px]"></div>
+</button>
+<!-- Dice Label & Instruction -->
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-sm text-headline-sm text-primary leading-tight">Dadu Siap Dikocok</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+          Sentuh dadu atau tombol di bawah untuk menentukan jarak melangkah.
+        </p>
+</div>
+</div>
+<!-- Primary Action Button: Physical Pill (52px height) -->
+<button class="w-full h-[52px] rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-[0_4px_0_#002111] active:translate-y-1 active:shadow-[0_1px_0_#002111] transition-all cursor-pointer" id="rollDiceBtn">
+<span class="material-symbols-outlined text-[24px]">casino</span>
+<span>Lempar Dadu & Jelajah!</span>
+</button>
+<!-- Active Player Turn Footnote -->
+<div class="mt-space-sm flex items-center gap-1.5 text-center">
+<span class="material-symbols-outlined text-[16px] text-secondary">record_voice_over</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+        Giliran <span class="font-bold text-on-surface">Maryono (Papa)</span> melempar dadu. Target: <span class="text-primary font-semibold">Berbagi cerita masa kecil.</span>
+</p>
+</div>
+</div>
+<!-- Interactive Slide-Up Card Sheet / Tile Inspector Modal (Hidden initially) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-xs flex items-end justify-center transition-opacity opacity-0 pointer-events-none duration-200" id="inspectorModal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-t-[28px] p-space-lg shadow-[0_-8px_32px_rgba(44,43,40,0.25)] flex flex-col gap-space-md transform translate-y-full transition-transform duration-200" id="inspectorSheet">
+<!-- Sheet Drag Handle -->
+<div class="w-10 h-1.5 rounded-full bg-outline-variant mx-auto -mt-1 mb-1"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">explore</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-primary" id="modalTileTitle">Petak Petualangan</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant active:scale-95" onclick="closeModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-[0_2px_0_#ddd9d5]">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed" id="modalTileDesc">
+          Papan cerita keluarga siap menyambut jawaban tulus dari Papa Maryono.
+        </p>
+</div>
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-[0_3px_0_#002111] active:translate-y-0.5" onclick="closeModal()">
+        Mengerti, Lanjutkan Petualangan
+      </button>
+</div>
+</div>
+</div>
+<script>
+  // Dice micro-interaction & audio haptics simulation
+  const rollBtn = document.getElementById('rollDiceBtn');
+  const diceEl = document.getElementById('diceElement');
+  const modal = document.getElementById('inspectorModal');
+  const sheet = document.getElementById('inspectorSheet');
+  const modalTitle = document.getElementById('modalTileTitle');
+  const modalDesc = document.getElementById('modalTileDesc');
+  const ruleBtn = document.getElementById('ruleModalBtn');
+
+  function rollAnimation() {
+    if (!diceEl) return;
+    diceEl.classList.add('animate-spin');
+    setTimeout(() => {
+      diceEl.classList.remove('animate-spin');
+      inspectTile('Hasil Lemparan: Angka 5!', 'Papa Maryono melangkah 5 petak ke petak #13 (AKSI). Misi: Berikan tos komando ke anak-anak!');
+    }, 450);
+  }
+
+  if (rollBtn) rollBtn.addEventListener('click', rollAnimation);
+  if (diceEl) diceEl.addEventListener('click', rollAnimation);
+
+  window.inspectTile = function(title, description) {
+    if (!modal || !sheet) return;
+    modalTitle.textContent = title;
+    modalDesc.textContent = description;
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    modal.classList.add('opacity-100');
+    sheet.classList.remove('translate-y-full');
+  };
+
+  window.closeModal = function() {
+    if (!modal || !sheet) return;
+    sheet.classList.add('translate-y-full');
+    modal.classList.remove('opacity-100');
+    modal.classList.add('opacity-0', 'pointer-events-none');
+  };
+
+  if (ruleBtn) {
+    ruleBtn.addEventListener('click', () => {
+      inspectTile('Aturan Main JelajahKita', 'Kocok dadu secara bergantian sesuai urutan keluarga. Setiap petak memiliki kartu refleksi hangat: Hati, Cerita, Mimpi, atau Aksi Bersama. Capai Titik 28 untuk merayakan Rumah Kasih!');
+    });
+  }
+
+  // Close modal when clicking outer backdrop
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(44,43,40,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 rounded-xl transition-transform active:scale-95 text-primary font-bold" data-path="meja-petualangan" href="#"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm mt-0.5">Meja</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 rounded-xl text-on-surface-variant transition-transform active:scale-95 hover:text-on-surface" data-path="kartu-keluarga" href="#"><span class="material-symbols-outlined text-[24px]">style</span><span class="font-label-sm text-label-sm mt-0.5">Kartu</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 rounded-xl text-on-surface-variant transition-transform active:scale-95 hover:text-on-surface" data-path="lingkar-tim" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-sm text-label-sm mt-0.5">Keluarga</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 rounded-xl text-on-surface-variant transition-transform active:scale-95 hover:text-on-surface" data-path="peti-warisan" href="#"><span class="material-symbols-outlined text-[24px]">auto_stories</span><span class="font-label-sm text-label-sm mt-0.5">Jurnal</span></a></div></nav></body></html>

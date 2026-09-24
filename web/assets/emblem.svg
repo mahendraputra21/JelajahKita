@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <circle cx="60" cy="60" r="54" fill="#FAF7F0" stroke="#1E3F2D" stroke-width="4"/>
+  <circle cx="60" cy="60" r="48" fill="#F4EFE6" stroke="#E6A23C" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- Compass / Mountain & Family Journey emblem -->
+  <path d="M60 22 L67 48 L93 55 L71 69 L78 95 L60 80 L42 95 L49 69 L27 55 L53 48 Z" fill="#1E3F2D" opacity="0.15"/>
+  <!-- Central Mountain / Tree & Path symbol -->
+  <path d="M40 76 C46 64 54 50 60 40 C66 50 74 64 80 76 Z" fill="#1E3F2D"/>
+  <path d="M52 76 C55 68 60 58 60 58 C60 58 65 68 68 76 Z" fill="#8FA88D"/>
+  <!-- Small star / sun beacon -->
+  <circle cx="60" cy="30" r="5" fill="#E6A23C"/>
+  <!-- Curved journey winding path -->
+  <path d="M38 84 C48 80 54 86 64 82 C72 79 78 83 82 85" stroke="#E27D60" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>JelajahKita - Player Setup</title>
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/player-setup.css">
+</head>
+<body>
+  <div class="app-container">
+    <main class="pt-safe pb-safe">
+      <div class="container-main">
+
+        <!-- Hero Card / Brand Lid Box -->
+        <div class="hero-card">
+          <!-- Language Toggle - Top Right -->
+          <div class="language-toggle-top">
+            <button class="language-button" data-lang="id" role="radio" aria-checked="true">ID</button>
+            <button class="language-button" data-lang="en" role="radio" aria-checked="false">EN</button>
+          </div>
+
+          <div class="hero-badge">
+            <span id="badge-stars-icon" class="icon-svg"></span>
+            <span data-i18n="app.edition">Edisi Meja Keluarga</span>
+          </div>
+
+          <div class="hero-emblem">
+            <img src="assets/emblem.svg" alt="JelajahKita Emblem" width="64" height="64">
+          </div>
+
+          <h1 class="hero-title" data-i18n="app.title">JELAJAHKITA</h1>
+          <p class="hero-tagline" data-i18n="app.tagline">Bermain bersama, tumbuh bersama.</p>
+        </div>
+
+        <div class="heading-section">
+          <div class="heading-section-content">
+            <h2 class="heading-section-title">
+              <span data-i18n="playerSetup.heading">Siapa yang ikut bermain?</span>
+              <span id="icon-family" class="icon-svg" style="color: var(--color-accent-coral); margin-left: 0.25rem;"></span>
+            </h2>
+            <p class="heading-section-subtitle" data-i18n="playerSetup.subheading">Pilih jumlah petualang & tentukan nama masing-masing.</p>
+          </div>
+        </div>
+
+        <!-- Player Count Selector: Tactile Pill Switch -->
+        <div class="player-count-selector" role="radiogroup" data-i18n-attr="aria-label:playerSetup.ariaCount">
+          <button class="player-count-button" data-players="2" type="button" role="radio" aria-checked="false">
+            <span id="icon-group-2" class="icon-svg"></span>
+            <span data-i18n="playerCount.2">2 Petualang</span>
+          </button>
+          <button class="player-count-button" data-players="3" type="button" role="radio" aria-checked="false">
+            <span id="icon-group-3" class="icon-svg"></span>
+            <span data-i18n="playerCount.3">3 Petualang</span>
+          </button>
+          <button class="player-count-button active" data-players="4" type="button" role="radio" aria-checked="true">
+            <span id="icon-groups" class="icon-svg"></span>
+            <span data-i18n="playerCount.4">4 Petualang</span>
+          </button>
+        </div>
+
+        <!-- Player Identity Cards List -->
+        <div class="player-cards-list" id="player-cards-list">
+          <!-- Dynamically populated and maintained by app.js -->
+        </div>
+
+        <!-- Information Hint Box -->
+        <div class="info-box">
+          <div class="info-box-icon" id="icon-info"></div>
+          <p class="info-box-text" data-i18n="info.text">Setiap pemain akan bergiliran melempar dadu dan membuka kartu misi cerita keluarga!</p>
+        </div>
+
+        <!-- Primary CTA Button (Punchboard 3D Mechanical Lip) -->
+        <div class="cta-container">
+          <button class="cta-button" id="btn-start" type="button">
+            <span class="cta-button-icon" id="icon-explore"></span>
+            <span class="cta-button-text" data-i18n="button.start">Mulai Petualangan</span>
+            <span class="cta-button-icon" id="icon-arrow"></span>
+          </button>
+        </div>
+
+        <!-- Footer Microcopy -->
+        <div class="footer-text" data-i18n="info.footer">
+          🎲 Papan Permainan Siap Digelar
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/icons.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

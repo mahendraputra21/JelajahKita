@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title data-i18n="game.title">JelajahKita – Meja Petualangan</title>
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/game-board.css">
+  <link rel="stylesheet" href="css/card.css">
+</head>
+<body>
+
+  <div class="game-screen">
+
+    <!-- ======================================================
+         FIXED HEADER
+         ====================================================== -->
+    <header class="game-header">
+
+       <div class="game-header-left">
+    <button
+      class="game-header-back"
+      id="btn-back"
+      type="button"
+      aria-label="Kembali"
+    >
+      <span aria-hidden="true">←</span>
+    </button>
+  </div>
+
+  <div class="game-header-brand">
+    <img
+      src="assets/emblem.svg"
+      alt="JelajahKita"
+      class="game-header-logo"
+      width="32"
+      height="32"
+    >
+
+    <div class="game-header-titles">
+      <span class="game-brand-title">JelajahKita</span>
+      <span class="game-brand-sub" data-i18n="game.title">
+        Meja Petualangan
+      </span>
+    </div>
+  </div>
+
+      <div class="game-header-actions">
+        <button class="game-header-btn" id="btn-rules" type="button"
+                aria-label="Aturan Main / Rules"
+                title="Aturan Main">
+          <span id="header-rules-icon"></span>
+        </button>
+
+        <button class="game-header-lang-btn" id="btn-lang" type="button"
+                aria-label="Ganti Bahasa / Toggle Language"
+                data-i18n="game.lang.toggle">ID</button>
+      </div>
+    </header>
+
+    <!-- ======================================================
+         SCROLLABLE MAIN CONTENT
+         ====================================================== -->
+    <main class="game-main" id="game-main">
+
+      <!-- ======================================================
+           TOP TABLETOP HUD BAR
+           ====================================================== -->
+      <div class="hud-container">
+        <!-- Turn Ribbon & Round Pill -->
+        <div class="hud-turn-card" id="hud-turn-card">
+          <!-- Active Player Badge -->
+          <div class="hud-active-player">
+            <div class="active-badge-wrapper">
+              <div class="active-badge-avatar" id="hud-avatar"
+                   style="background: #1E3F2D; box-shadow: 0 3px 0 #002111;">
+                M
+              </div>
+              <span class="avatar-star-badge" aria-hidden="true">★</span>
+            </div>
+            <div class="hud-player-info">
+              <span class="hud-player-label" data-i18n="game.hud.turnLabel">Giliran Petualang</span>
+              <span class="hud-player-name" id="hud-player-name">Maryono</span>
+            </div>
+          </div>
+
+          <!-- Round Info & Modal Trigger -->
+          <div class="hud-round-info">
+            <div class="hud-step-column">
+              <span class="hud-step-pill">
+                <span class="step-dot" aria-hidden="true"></span>
+                <span id="hud-player-step">Langkah 1</span>
+              </span>
+              <span class="hud-mission-sub" data-i18n="game.hud.missionLabel">Misi Harmoni</span>
+            </div>
+            <button class="hud-rules-trigger" id="hud-rules-btn" type="button" aria-label="Aturan Main">
+              <span id="hud-rules-icon"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cooperative Milestone Tracker Bar -->
+        <div class="hud-milestone-bar">
+          <span class="hud-milestone-title">
+            <span class="milestone-temple-icon" id="milestone-temple-icon"></span>
+            <span data-i18n="game.hud.milestoneLabel">Pos Harapan</span>
+          </span>
+          <div class="milestone-tracker" id="milestone-tracker" aria-label="Milestone progress">
+            <!-- 6 dots injected by JS -->
+          </div>
+          <span class="hud-milestone-count" id="hud-milestone-text">Pos 0 / 6</span>
+        </div>
+      </div>
+
+      <!-- ======================================================
+           GAME BOARD CANVAS
+           ====================================================== -->
+      <div class="board-canvas" role="region" aria-label="Game Board">
+        <!-- Linen & grain texture underlay -->
+        <div class="board-linen" aria-hidden="true">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="linen-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+                <path d="M 0 12 L 12 0 M 0 0 L 12 12" fill="none" stroke="#727973" stroke-opacity="0.25" stroke-width="0.5"></path>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#linen-grid)"></rect>
+          </svg>
+        </div>
+
+        <!-- Center watermark explore emblem -->
+        <div class="board-watermark" aria-hidden="true">
+          <svg width="180" height="180" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm2.19-12.19L8.5 11.5l1.69 5.69L15.5 12.5l-1.31-4.69zm-1.44 3.44l-1.5.5.5-1.5 1.5-.5-.5 1.5z"/>
+          </svg>
+        </div>
+
+        <!-- SVG Organic S-Curve Connection Path connecting 28 physical tiles -->
+        <svg class="board-svg-path" viewBox="0 0 350 480" fill="none" aria-hidden="true">
+          <path d="M 25 420 
+                   L 325 420 
+                   C 365 420, 365 300, 325 300
+                   L 25 300 
+                   C -15 300, -15 180, 25 180
+                   L 325 180 
+                   C 365 180, 365 60, 325 60
+                   L 25 60" stroke="#c1c8c1" stroke-dasharray="6 8" stroke-linecap="round" stroke-width="4"></path>
+        </svg>
+
+        <!-- 28-tile S-curve grid -->
+        <div class="board-grid" id="board-grid" role="grid" aria-label="Board Tiles">
+          <!-- Populated entirely by game.js renderBoard() -->
+        </div>
+
+        <!-- Board Legend -->
+        <div class="board-legend" id="board-legend" role="list" aria-label="Tile Legend">
+          <!-- Populated by game.js renderLegend() -->
+        </div>
+      </div>
+
+      <!-- ======================================================
+           PLAYER ROSTER (4-card dock, 2–4 visible)
+           ====================================================== -->
+      <div class="player-roster" id="player-roster" role="list" aria-label="Player Positions">
+        <!-- Populated by game.js renderRoster() -->
+      </div>
+
+      <!-- ======================================================
+           DICE AREA
+           ====================================================== -->
+      <div class="dice-area">
+        <div class="dice-area-row">
+          <!-- Tactile 3D Die Container -->
+          <div class="dice-container">
+            <div class="dice-face" id="dice-face" role="button" aria-label="Die"
+                 tabindex="0" title="Tap to roll">
+              <!-- Pips injected by JS -->
+            </div>
+            <div class="dice-shadow" aria-hidden="true"></div>
+          </div>
+
+          <div class="dice-info">
+            <span class="dice-ready-label" data-i18n="game.dice.ready">Dadu Siap Dikocok</span>
+            <p class="dice-instruction" data-i18n="game.dice.instruction">
+              Sentuh dadu atau tombol di bawah untuk menentukan jarak melangkah.
+            </p>
+          </div>
+        </div>
+
+        <!-- Primary Action Button: Physical Pill (52px height) -->
+        <button class="roll-btn" id="btn-roll" type="button">
+          <span class="roll-btn-icon" id="roll-btn-icon"></span>
+          <span data-i18n="game.dice.rollBtn">Lempar Dadu &amp; Jelajah!</span>
+        </button>
+
+        <!-- Active Player Turn Footnote -->
+        <div class="dice-footnote" id="dice-footnote-wrap">
+          <span class="footnote-icon" id="footnote-voice-icon"></span>
+          <span id="dice-footnote"></span>
+        </div>
+      </div>
+
+    </main><!-- /game-main -->
+
+  </div><!-- /game-screen -->
+
+  <!-- ======================================================
+       TOAST NOTIFICATION
+       ====================================================== -->
+  <div class="game-toast" id="game-toast" role="status" aria-live="polite"></div>
+
+  <!-- ======================================================
+       RULES MODAL BOTTOM SHEET
+       ====================================================== -->
+  <div class="rules-modal-bg" id="rules-modal-bg" role="dialog"
+       aria-modal="true" aria-labelledby="rules-modal-title">
+    <div class="rules-modal-sheet" id="rules-modal-sheet">
+      <div class="rules-modal-handle" aria-hidden="true"></div>
+      <div class="rules-modal-header">
+        <div class="rules-modal-icon-badge" id="rules-book-icon"></div>
+        <div class="rules-modal-title" id="rules-modal-title"
+             data-i18n="game.rules.title">Aturan Main JelajahKita</div>
+      </div>
+      <div class="rules-modal-body" data-i18n="game.rules.body">
+        Kocok dadu secara bergantian sesuai urutan keluarga. Setiap petak memiliki kartu refleksi hangat: Hati, Cerita, Mimpi, atau Aksi Bersama. Capai Petak 28 untuk merayakan Rumah Kasih!
+      </div>
+      <button class="rules-modal-btn" id="btn-rules-close" type="button"
+              data-i18n="game.rules.btn">Mengerti, Lanjutkan!</button>
+    </div>
+  </div>
+
+  <!-- TARUH EXIT CONFIRMATION DI SINI -->
+  <!-- EXIT CONFIRMATION -->
+<div
+  id="exit-confirm-modal"
+  class="exit-confirm-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+  style="display:none;"
+>
+  <div class="exit-confirm-card">
+
+    <div class="exit-confirm-icon">🏕️</div>
+
+    <h2 data-i18n="game.exit.title">
+      Akhiri Petualangan?
+    </h2>
+
+    <p data-i18n="game.exit.message">
+      Perjalanan yang sedang berlangsung akan dihentikan.
+      Yakin ingin kembali ke persiapan permainan?
+    </p>
+
+    <div class="exit-confirm-actions">
+
+      <button
+        id="btn-exit-cancel"
+        class="exit-btn exit-btn-secondary"
+        type="button"
+      >
+        <span data-i18n="game.exit.cancel">
+          Lanjutkan Petualangan
+        </span>
+      </button>
+
+      <button
+        id="btn-exit-confirm"
+        class="exit-btn exit-btn-primary"
+        type="button"
+      >
+        <span data-i18n="game.exit.confirm">
+          Akhiri Petualangan
+        </span>
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+  <!-- ======================================================
+       CARD / REFLECTION MODAL (Stitch Reference Structure)
+       ====================================================== -->
+  <div id="card-modal-overlay" class="card-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <!-- Dimmed board layer beneath -->
+    <div class="dimmed-board" aria-hidden="true">
+      <div class="dimmed-card">
+        <span class="dimmed-label" data-i18n="game.hud.path">Jalur Petualangan</span>
+        <span class="dimmed-steps" id="dimmed-steps">Langkah 14 / 30</span>
+      </div>
+    </div>
+
+    <!-- Tactile Card Surface -->
+    <div class="card-modal-content" id="card-modal-content">
+      <div class="card-stitched-frame">
+        
+        <!-- Compass/Seal Motif -->
+        <div class="card-seal-motif">
+          <svg class="card-seal-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="46" stroke="#1E3F2D" stroke-width="5" fill="none"></circle>
+            <circle cx="50" cy="50" r="39" stroke="#E6A23C" stroke-dasharray="5 3" stroke-width="2.5" fill="none"></circle>
+            <path d="M50 20 L58 38 L78 40 L63 54 L67 74 L50 63 L33 74 L37 54 L22 40 L42 38 Z" fill="#E6E2DD"></path>
+            <polygon fill="#1E3F2D" points="50,32 68,66 32,66"></polygon>
+            <polygon fill="#8FA88D" points="50,44 60,66 40,66"></polygon>
+            <circle cx="50" cy="24" fill="#E6A23C" r="5"></circle>
+            <path d="M29 70 Q 50 64 71 70" fill="none" stroke="#E27D60" stroke-linecap="round" stroke-width="3.5"></path>
+          </svg>
+        </div>
+
+        <!-- Category Badge & Series -->
+        <div class="card-header">
+          <div class="card-category-badge" id="card-category-badge-box">
+            <span id="card-category-icon" class="icon-svg">✨</span>
+            <span id="card-category-text">KARTU MIMPI</span>
+          </div>
+          <span class="card-series-number" id="card-series-number">No. 14 / Seri Masa Depan</span>
+        </div>
+
+        <!-- Active Player Indicator -->
+        <div class="card-speaker-pill">
+          <div class="speaker-avatar" id="speaker-avatar" style="background-color: #99452c;">
+            <span id="speaker-initial">A</span>
+          </div>
+          <span class="speaker-label">
+            <span data-i18n="card.speaker">Giliran</span>
+            <span id="speaker-name" class="font-bold">Ayu (Mama)</span>
+            <span data-i18n="card.speaker-to-share">untuk bercerita</span>
+          </span>
+        </div>
+
+        <!-- Reflection Prompt -->
+        <div class="card-prompt-box">
+          <p class="card-prompt-text" id="card-prompt-text">
+            "Jika keluarga kita bisa merencanakan satu hari petualangan impian tanpa batas akhir pekan ini, tempat mana yang paling ingin kamu kunjungi bersama?"
+          </p>
+        </div>
+
+        <!-- Cooperative Guidance -->
+        <div class="card-guidance-box">
+          <span class="guidance-icon" id="guidance-icon">❤️</span>
+          <p class="guidance-text" id="card-guidance-text">
+            Dengarkan sampai selesai, lalu tambahkan cerita singkat jika ingin.
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="card-button-group">
+          <button id="btn-card-continue" class="btn-primary btn-card">
+            <span class="btn-icon">✓</span>
+            <span data-i18n="card.action-continue">Lanjut Langkah Berikutnya</span>
+          </button>
+          <button id="btn-card-replace" class="btn-secondary btn-card">
+            <span class="btn-icon">🔄</span>
+            <span data-i18n="card.action-replace">Ganti dengan kartu lain</span>
+          </button>
+        </div>
+
+        <!-- Footer Note -->
+        <div class="card-footer-note">
+          <span class="footer-icon">🎉</span>
+          <span class="footer-text" data-i18n="card.footer">Tidak ada jawaban salah. Semua cerita dirayakan bersama.</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       GAME OVER OVERLAY
+       ====================================================== -->
+  <!-- ======================================================
+       FINAL COMPLETION OVERLAY (Stitch Reference)
+       ====================================================== -->
+  <!-- COMPLETION SCREEN -->
+<div
+  id="completion-overlay"
+  class="completion-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+  style="display:none;"
+>
+  <div class="completion-festive-bg" aria-hidden="true">
+    <svg
+      class="completion-svg-full"
+      preserveAspectRatio="none"
+      viewBox="0 0 360 800"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M-10,24 Q90,65 180,30 T370,35"
+        fill="none"
+        opacity=".35"
+        stroke="#727973"
+        stroke-dasharray="3,3"
+        stroke-width="1.2"
+      />
+
+      <polygon fill="#ff9475" opacity=".8" points="35,42 47,62 25,62"/>
+      <polygon fill="#d6952f" opacity=".8" points="85,50 97,70 75,70"/>
+      <polygon fill="#1e3f2d" opacity=".8" points="140,43 152,63 130,63"/>
+      <polygon fill="#86aa93" opacity=".8" points="205,34 217,54 195,54"/>
+      <polygon fill="#ff9475" opacity=".8" points="265,34 277,54 255,54"/>
+      <polygon fill="#d6952f" opacity=".8" points="315,38 327,58 305,58"/>
+
+      <circle cx="28" cy="115" fill="#ff9475" opacity=".45" r="4.5"/>
+      <circle cx="334" cy="98" fill="#d6952f" opacity=".5" r="3.5"/>
+      <circle cx="22" cy="290" fill="#86aa93" opacity=".5" r="3"/>
+      <circle cx="340" cy="380" fill="#d6952f" opacity=".35" r="5"/>
+      <circle cx="338" cy="560" fill="#1e3f2d" opacity=".3" r="4"/>
+    </svg>
+  </div>
+
+  <div class="completion-content-scroll">
+    <div class="completion-container">
+
+      <!-- EMBLEM + LAUREL -->
+      <div class="completion-header">
+
+        <div class="completion-emblem-wrap">
+          <svg
+            class="completion-laurel"
+            viewBox="0 0 100 100"
+            aria-hidden="true"
+          >
+            <path
+              d="M28 72 C22 62 20 48 24 35 C25 41 29 46 32 48
+                 C28 43 27 34 31 26 C34 32 37 36 41 38
+                 C37 32 38 22 44 16 C45 23 48 27 50 30"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2.5"
+            />
+            <path
+              d="M72 72 C78 62 80 48 76 35 C75 41 71 46 68 48
+                 C72 43 73 34 69 26 C66 32 63 36 59 38
+                 C63 32 62 22 56 16 C55 23 52 27 50 30"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2.5"
+            />
+          </svg>
+
+          <img
+            class="completion-emblem"
+            src="assets/emblem.svg"
+            alt="JelajahKita"
+          />
+        </div>
+
+        <div class="completion-badge">
+          <span>♥</span>
+          <span data-i18n="completion.badge">Misi Bersama Terwujud</span>
+        </div>
+
+        <h1
+          class="completion-title"
+          data-i18n="completion.title"
+        >
+          KELUARGA YANG MENYELESAIKAN BERSAMA
+        </h1>
+
+        <p
+          class="completion-subtitle"
+          data-i18n="completion.subtitle"
+        >
+          28 langkah petualangan, 12 cerita terungkap, 1 kenangan abadi.
+        </p>
+      </div>
+
+      <!-- HARMONY RIBBON -->
+      <section class="completion-harmony">
+        <div class="completion-harmony-icon">👨‍👩‍👧‍👦</div>
+
+        <div class="completion-harmony-copy">
+          <strong data-i18n="completion.harmony-title">
+            Harmoni Petualang
+          </strong>
+
+          <span data-i18n="completion.harmony-subtitle">
+            100% Selesai Penuh Cinta
+          </span>
+        </div>
+
+        <div class="completion-player-dots">
+          <span style="background:#1E3F2D"></span>
+          <span style="background:#E6A23C"></span>
+          <span style="background:#E27D60"></span>
+          <span style="background:#6890AA"></span>
+        </div>
+      </section>
+
+      <!-- PLAYER GRID -->
+      <section
+        id="completion-player-grid"
+        class="completion-player-grid"
+      ></section>
+
+      <!-- MEMORY -->
+      <section class="completion-memory">
+        <div class="completion-memory-header">
+          <div>
+            <h2 data-i18n="completion.memory-title">
+              Catatan Kenangan Hari Ini
+            </h2>
+
+            <p data-i18n="completion.memory-subtitle">
+              Babak Final
+            </p>
+          </div>
+        </div>
+
+        <div class="completion-memory-item">
+          <span class="completion-memory-icon">🌟</span>
+          <div>
+            <small data-i18n="completion.memory-dream-label">
+              TEMPAT IMPIAN KELUARGA
+            </small>
+            <strong data-i18n="completion.memory-dream">
+              Pantai Pasir Putih
+            </strong>
+          </div>
+        </div>
+
+        <div class="completion-memory-item">
+          <span class="completion-memory-icon">❤️</span>
+          <div>
+            <small data-i18n="completion.memory-moment-label">
+              MOMEN PALING BERKESAN
+            </small>
+            <strong data-i18n="completion.memory-moment">
+              Kisah sepeda pertama
+            </strong>
+          </div>
+        </div>
+
+        <div class="completion-memory-item">
+          <span class="completion-memory-icon">🤝</span>
+          <div>
+            <small data-i18n="completion.memory-promise-label">
+              JANJI BERSAMA
+            </small>
+            <strong data-i18n="completion.memory-promise">
+              Masak sarapan bersama hari Minggu
+            </strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTIONS -->
+      <div class="completion-actions">
+        <!-- <button
+          id="btn-save-memory"
+          class="completion-btn completion-btn-primary"
+        >
+          <span>⇩</span>
+          <span data-i18n="completion.action-save">
+            Simpan Catatan Kenangan
+          </span>
+        </button> -->
+
+        <button
+          id="btn-new-adventure"
+          class="completion-btn completion-btn-secondary"
+        >
+          <span>↻</span>
+          <span data-i18n="completion.action-new">
+            Mulai Petualangan Baru
+          </span>
+        </button>
+      </div>
+
+      <footer class="completion-footer">
+        🌿
+        <span data-i18n="completion.footer">
+          JelajahKita • Bermain bersama, tumbuh bersama.
+        </span>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+  <!-- Scripts: offline only, order matters -->
+  <script src="js/icons.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/card.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+[
+  {
+    "id": "HATI-01",
+    "category": "HATI",
+    "prompt": {
+      "id": "Sebutkan satu hal kecil dari anggota keluarga lain yang membuatmu tersenyum.",
+      "en": "Name one small thing another family member does that makes you smile."
+    },
+    "guidance": {
+      "id": "Dengarkan sampai selesai, lalu tambahkan cerita singkat jika ingin.",
+      "en": "Listen until they finish, then add a short story if you like."
+    }
+  },
+  {
+    "id": "HATI-02",
+    "category": "HATI",
+    "prompt": {
+      "id": "Siapa di keluarga ini yang pernah membuat harimu terasa lebih ringan? Ceritakan caranya.",
+      "en": "Who in this family has ever made your day feel lighter? Tell us how."
+    },
+    "guidance": {
+      "id": "Berikan contoh sederhana dari keseharian.",
+      "en": "Give one simple example from everyday life."
+    }
+  },
+  {
+    "id": "HATI-03",
+    "category": "HATI",
+    "prompt": {
+      "id": "Kalau kamu bisa mengucapkan terima kasih untuk satu hal hari ini, apa itu?",
+      "en": "If you could say thank you for one thing today, what would it be?"
+    },
+    "guidance": {
+      "id": "Biarkan semua orang menambahkan satu ucapan terima kasih.",
+      "en": "Let everyone add one thank-you of their own."
+    }
+  },
+  {
+    "id": "HATI-04",
+    "category": "HATI",
+    "prompt": {
+      "id": "Apa kebiasaan kecil keluarga yang ingin kamu pertahankan terus?",
+      "en": "What small family habit would you like to keep forever?"
+    },
+    "guidance": {
+      "id": "Sebutkan satu kebiasaan dan kenapa kamu menyukainya.",
+      "en": "Name one habit and why you enjoy it."
+    }
+  },
+  {
+    "id": "HATI-05",
+    "category": "HATI",
+    "prompt": {
+      "id": "Kapan terakhir kali kamu merasa benar-benar didukung oleh keluarga?",
+      "en": "When was the last time you felt truly supported by your family?"
+    },
+    "guidance": {
+      "id": "Ceritakan momen sederhananya, tidak perlu panjang.",
+      "en": "Share the simple moment; it does not need to be a long story."
+    }
+  },
+  {
+    "id": "HATI-06",
+    "category": "HATI",
+    "prompt": {
+      "id": "Pilih satu anggota keluarga dan sebutkan satu hal yang kamu kagumi darinya.",
+      "en": "Choose one family member and name one thing you admire about them."
+    },
+    "guidance": {
+      "id": "Tatap orangnya dan sampaikan dengan hangat.",
+      "en": "Look at them and say it warmly."
+    }
+  },
+  {
+    "id": "HATI-07",
+    "category": "HATI",
+    "prompt": {
+      "id": "Kalau keluarga kita punya motto hari ini, apa kalimatnya?",
+      "en": "If our family had a motto for today, what would it be?"
+    },
+    "guidance": {
+      "id": "Buat kalimat pendek yang bisa diucapkan bersama.",
+      "en": "Create a short line everyone can say together."
+    }
+  },
+  {
+    "id": "HATI-08",
+    "category": "HATI",
+    "prompt": {
+      "id": "Apa satu hal yang ingin kamu lakukan lebih sering bersama keluarga?",
+      "en": "What is one thing you would like to do more often together as a family?"
+    },
+    "guidance": {
+      "id": "Pilih sesuatu yang sederhana dan menyenangkan.",
+      "en": "Choose something simple and enjoyable."
+    }
+  },
+  {
+    "id": "CERITA-01",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Ceritakan satu momen keluarga yang selalu membuatmu tertawa.",
+      "en": "Tell us about a family moment that always makes you laugh."
+    },
+    "guidance": {
+      "id": "Kalau bisa, ceritakan bagian yang paling lucu.",
+      "en": "If you can, tell us the funniest part."
+    }
+  },
+  {
+    "id": "CERITA-02",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Apa perjalanan keluarga yang paling kamu ingat sampai sekarang?",
+      "en": "Which family trip do you remember most clearly?"
+    },
+    "guidance": {
+      "id": "Sebutkan tempat, siapa yang ikut, dan satu hal yang paling diingat.",
+      "en": "Name the place, who was there, and one thing you remember most."
+    }
+  },
+  {
+    "id": "CERITA-03",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Ceritakan satu kejadian kecil di rumah yang sekarang terasa lucu.",
+      "en": "Tell us about a small moment at home that feels funny now."
+    },
+    "guidance": {
+      "id": "Tidak perlu sempurna—detail kecil justru menarik.",
+      "en": "It does not have to be perfect—the little details are often the best."
+    }
+  },
+  {
+    "id": "CERITA-04",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Apa makanan keluarga yang langsung mengingatkanmu pada rumah?",
+      "en": "What family food instantly reminds you of home?"
+    },
+    "guidance": {
+      "id": "Ceritakan siapa yang biasanya membuat atau menikmatinya.",
+      "en": "Tell us who usually makes or enjoys it."
+    }
+  },
+  {
+    "id": "CERITA-05",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Dulu, permainan apa yang paling sering dimainkan bersama keluarga?",
+      "en": "What game did your family play most often in the past?"
+    },
+    "guidance": {
+      "id": "Kalau masih diingat, tunjukkan sedikit caranya.",
+      "en": "If you remember it, show us a little of how it was played."
+    }
+  },
+  {
+    "id": "CERITA-06",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Ceritakan satu benda di rumah yang punya cerita khusus.",
+      "en": "Tell us about one object at home that has a special story."
+    },
+    "guidance": {
+      "id": "Benda apa, dari mana asalnya, dan kenapa penting?",
+      "en": "What is it, where did it come from, and why does it matter?"
+    }
+  },
+  {
+    "id": "CERITA-07",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Apa kebiasaan akhir pekan keluarga yang paling kamu suka?",
+      "en": "What family weekend habit do you enjoy most?"
+    },
+    "guidance": {
+      "id": "Boleh cerita versi dulu dan versi sekarang.",
+      "en": "You can compare how it was before and how it is now."
+    }
+  },
+  {
+    "id": "CERITA-08",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Kalau kita membuat album foto keluarga, foto mana yang wajib masuk?",
+      "en": "If we made a family photo album, which picture must be included?"
+    },
+    "guidance": {
+      "id": "Ceritakan kenapa foto itu terasa istimewa.",
+      "en": "Tell us why that picture feels special."
+    }
+  },
+  {
+    "id": "MIMPI-01",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kalau keluarga kita bisa pergi ke mana saja, kamu ingin ke mana?",
+      "en": "If our family could go anywhere, where would you like to go?"
+    },
+    "guidance": {
+      "id": "Bayangkan satu hari seru yang akan kita jalani di sana.",
+      "en": "Imagine one fun day we could spend there."
+    }
+  },
+  {
+    "id": "MIMPI-02",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Aktivitas baru apa yang ingin kamu coba bersama keluarga?",
+      "en": "What new activity would you like to try together as a family?"
+    },
+    "guidance": {
+      "id": "Pilih sesuatu yang realistis untuk dicoba bersama.",
+      "en": "Choose something realistic that you could try together."
+    }
+  },
+  {
+    "id": "MIMPI-03",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kalau kita punya satu hari khusus tanpa terburu-buru, bagaimana kamu ingin menghabiskannya?",
+      "en": "If we had one special day with no rush, how would you spend it?"
+    },
+    "guidance": {
+      "id": "Susun versi idealmu dari pagi sampai malam.",
+      "en": "Imagine your ideal day from morning to night."
+    }
+  },
+  {
+    "id": "MIMPI-04",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Apa satu hal kecil yang ingin kamu wujudkan bersama keluarga tahun ini?",
+      "en": "What is one small thing you would like our family to make happen this year?"
+    },
+    "guidance": {
+      "id": "Buat impiannya sederhana, jelas, dan menyenangkan.",
+      "en": "Keep the dream simple, clear, and fun."
+    }
+  },
+  {
+    "id": "MIMPI-05",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kalau keluarga kita punya rumah pohon, apa yang harus ada di dalamnya?",
+      "en": "If our family had a treehouse, what would have to be inside?"
+    },
+    "guidance": {
+      "id": "Semua boleh menambahkan satu benda favorit.",
+      "en": "Everyone can add one favorite thing."
+    }
+  },
+  {
+    "id": "MIMPI-06",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Apa kegiatan keluarga yang ingin kamu jadikan tradisi baru?",
+      "en": "What family activity would you like to turn into a new tradition?"
+    },
+    "guidance": {
+      "id": "Pilih kegiatan yang bisa dilakukan berulang.",
+      "en": "Choose something you could repeat regularly."
+    }
+  },
+  {
+    "id": "MIMPI-07",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kalau kita merancang petualangan keluarga impian, apa tiga hal yang wajib ada?",
+      "en": "If we designed our dream family adventure, what three things must be included?"
+    },
+    "guidance": {
+      "id": "Gabungkan jawaban semua pemain menjadi satu rencana.",
+      "en": "Combine everyone's answers into one shared plan."
+    }
+  },
+  {
+    "id": "MIMPI-08",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Apa sesuatu yang ingin kamu pelajari bersama anggota keluarga lain?",
+      "en": "What is something you would like to learn together with another family member?"
+    },
+    "guidance": {
+      "id": "Bayangkan kapan dan bagaimana kita akan memulainya.",
+      "en": "Imagine when and how you would start."
+    }
+  },
+  {
+    "id": "AKSI-01",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Buat pose keluarga paling kompak selama tiga detik!",
+      "en": "Make your most coordinated family pose for three seconds!"
+    },
+    "guidance": {
+      "id": "Semua ikut. Tidak perlu pose sempurna.",
+      "en": "Everyone joins. No perfect pose required."
+    }
+  },
+  {
+    "id": "AKSI-02",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Buat suara hewan pilihanmu, lalu semua orang menebak.",
+      "en": "Make the sound of an animal of your choice and let everyone guess."
+    },
+    "guidance": {
+      "id": "Pilih hewan yang mudah diperagakan dan tetap menyenangkan.",
+      "en": "Choose an animal that is easy and fun to act out."
+    }
+  },
+  {
+    "id": "AKSI-03",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Tepuk tangan bersama mengikuti pola yang dibuat pemain aktif.",
+      "en": "Clap together by copying a rhythm created by the active player."
+    },
+    "guidance": {
+      "id": "Buat pola pendek, lalu tingkatkan sedikit jika berhasil.",
+      "en": "Start with a short pattern, then make it a little harder if you succeed."
+    }
+  },
+  {
+    "id": "AKSI-04",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Buat kata sandi keluarga dari tiga gerakan sederhana.",
+      "en": "Create a family secret code using three simple gestures."
+    },
+    "guidance": {
+      "id": "Semua harus bisa mengingat dan mengulanginya.",
+      "en": "Everyone should be able to remember and repeat it."
+    }
+  },
+  {
+    "id": "AKSI-05",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Dalam lima detik, semua orang tunjukkan ekspresi wajah yang sama.",
+      "en": "In five seconds, everyone show the same facial expression."
+    },
+    "guidance": {
+      "id": "Pilih ekspresi yang lucu dan ringan.",
+      "en": "Choose something funny and light."
+    }
+  },
+  {
+    "id": "AKSI-06",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Buat yel-yel keluarga pendek dan ucapkan bersama.",
+      "en": "Create a short family cheer and say it together."
+    },
+    "guidance": {
+      "id": "Gunakan maksimal satu kalimat pendek.",
+      "en": "Keep it to one short sentence."
+    }
+  },
+  {
+    "id": "AKSI-07",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Pemain aktif memilih satu gerakan sederhana. Semua harus menirukannya.",
+      "en": "The active player chooses one simple movement. Everyone copies it."
+    },
+    "guidance": {
+      "id": "Bergantian kalau ingin membuat ronde kedua.",
+      "en": "Take turns if you want to do a second round."
+    }
+  },
+  {
+    "id": "AKSI-08",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Saling beri high-five membentuk lingkaran kecil.",
+      "en": "Give one another high-fives in a little circle."
+    },
+    "guidance": {
+      "id": "Setelah selesai, lanjutkan permainan dengan semangat.",
+      "en": "When you're done, continue the game with a smile."
+    }
+  }
+]

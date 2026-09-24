@@ -1,0 +1,590 @@
+/* Player Setup Screen Styles
+   Warm Tactile Skeuomorphism paired with Organic Modernism
+*/
+
+.container-main {
+  width: 100%;
+  max-width: 480px;
+  padding: var(--space-margin-mobile);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 481px) {
+  .container-main {
+    padding: var(--space-margin);
+  }
+}
+
+/* ==========================================================================
+   Hero Card - Brand Lid (Physical Board Game Box Top)
+   ========================================================================== */
+.hero-card {
+  width: 100%;
+  background-color: var(--color-surface-lowest);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xs);
+}
+
+/* Language Toggle - Positioned inside Hero Top Right */
+.language-toggle-top {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  background: var(--color-surface-container);
+  padding: 2px;
+  border-radius: var(--radius-full);
+}
+
+.language-toggle-top .language-button {
+  font-family: var(--font-family-base);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--color-on-surface-variant);
+  background: transparent;
+  border: none;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-toggle-top .language-button.active {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* Subtle tactile linen gradient underlay */
+.hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(68, 102, 81, 0.05), rgba(236, 231, 221, 0.3));
+}
+
+.hero-badge {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed);
+  padding: 0.25rem var(--space-md);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  font-size: var(--font-label-sm);
+  font-weight: var(--font-label-sm-weight);
+  letter-spacing: var(--font-label-sm-tracking);
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.hero-emblem {
+  position: relative;
+  z-index: 2;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-low);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-xs);
+}
+
+.hero-emblem img,
+.hero-emblem svg {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: var(--radius-full);
+}
+
+.hero-title {
+  position: relative;
+  z-index: 2;
+  color: var(--color-primary-container);
+  font-size: var(--font-headline-lg-mobile);
+  font-weight: var(--font-headline-lg-mobile-weight);
+  line-height: var(--font-headline-lg-mobile-line);
+  letter-spacing: var(--font-headline-lg-mobile-tracking);
+  margin: 0;
+}
+
+.hero-tagline {
+  position: relative;
+  z-index: 2;
+  color: var(--color-on-surface-variant);
+  font-size: var(--font-body-sm);
+  font-weight: var(--font-body-sm-weight);
+  line-height: var(--font-body-sm-line);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Heading Section
+   ========================================================================== */
+.heading-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.heading-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.heading-section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin: 0;
+  color: var(--color-primary-container);
+  font-size: var(--font-headline-md);
+  font-weight: var(--font-headline-md-weight);
+  line-height: var(--font-headline-md-line);
+}
+
+.heading-section-subtitle {
+  margin: 0;
+  color: var(--color-on-surface-variant);
+  font-size: var(--font-body-sm);
+  font-weight: var(--font-body-sm-weight);
+  line-height: var(--font-body-sm-line);
+}
+
+/* ==========================================================================
+   Language Toggle - Segmented Pill
+   ========================================================================== */
+.language-toggle {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin: var(--space-md) auto var(--space-lg);
+  width: fit-content;
+  background: var(--color-surface-container);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-inner);
+}
+
+.language-button {
+  font-family: var(--font-family-base);
+  font-size: var(--font-label-md);
+  font-weight: 700;
+  letter-spacing: var(--font-label-md-tracking);
+  color: var(--color-on-surface-variant);
+  background: transparent;
+  border: none;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-button.active {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: var(--shadow-btn-primary);
+}
+
+/* ==========================================================================
+   Player Count Selector - Tactile Pill Switch
+   ========================================================================== */
+.player-count-selector {
+  width: 100%;
+  display: flex;
+  gap: 4px;
+  background-color: var(--color-surface-high);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-inner);
+}
+
+.player-count-button {
+  flex: 1;
+  padding: 0.5rem 0.25rem;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 11.5px;
+  font-weight: var(--font-label-md-weight);
+  line-height: var(--font-label-md-line);
+  letter-spacing: var(--font-label-md-tracking);
+  background-color: transparent;
+  color: var(--color-on-surface-variant);
+  cursor: pointer;
+  transition: all 150ms var(--ease-spring);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.player-count-button:active {
+  transform: translateY(1px);
+}
+
+.player-count-button.active {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   Player Cards List
+   ========================================================================== */
+.player-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.player-card {
+  width: 100%;
+  background-color: var(--color-surface-lowest);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  transition: box-shadow 200ms ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.player-card.hidden {
+  display: none;
+}
+
+.player-card-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  min-width: 0;
+  flex: 1;
+}
+
+/* Avatar Token with Raised Physical Ring */
+.player-avatar {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  font-size: var(--font-headline-sm);
+  font-weight: var(--font-headline-sm-weight);
+  line-height: var(--font-headline-sm-line);
+  flex-shrink: 0;
+}
+
+.player-avatar.player-1 {
+  background-color: var(--color-player-1-bg);
+  color: var(--color-player-1-text);
+}
+
+.player-avatar.player-2 {
+  background-color: var(--color-player-2-bg);
+  color: var(--color-player-2-text);
+}
+
+.player-avatar.player-3 {
+  background-color: var(--color-player-3-bg);
+  color: var(--color-player-3-text);
+}
+
+.player-avatar.player-4 {
+  background-color: var(--color-player-4-bg);
+  color: var(--color-player-4-text);
+}
+
+.player-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 0.125rem;
+}
+
+.player-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.player-identity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.player-identity-dot.player-1 {
+  background-color: var(--color-player-1);
+}
+
+.player-identity-dot.player-2 {
+  background-color: var(--color-player-2);
+}
+
+.player-identity-dot.player-3 {
+  background-color: var(--color-player-3);
+}
+
+.player-identity-dot.player-4 {
+  background-color: var(--color-surface-tint);
+}
+
+.player-identity-text {
+  font-size: var(--font-label-sm);
+  font-weight: var(--font-label-sm-weight);
+  line-height: var(--font-label-sm-line);
+  letter-spacing: var(--font-label-sm-tracking);
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 0;
+  margin-top: 2px;
+}
+
+.player-name {
+  font-size: var(--font-body-lg);
+  font-weight: 700;
+  line-height: var(--font-body-lg-line);
+  color: var(--color-on-surface);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-role {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-label-sm);
+  font-weight: var(--font-label-sm-weight);
+  line-height: var(--font-label-sm-line);
+  flex-shrink: 0;
+}
+
+.player-role.player-1 {
+  background-color: var(--color-primary-fixed-dim);
+  color: var(--color-on-primary-fixed-variant);
+}
+
+.player-role.player-2 {
+  background-color: var(--color-tertiary-fixed-dim);
+  color: var(--color-on-tertiary-fixed-variant);
+}
+
+.player-role.player-3 {
+  background-color: var(--color-secondary-fixed-dim);
+  color: var(--color-on-secondary-fixed-variant);
+}
+
+.player-role.player-4 {
+  background-color: var(--color-surface-dim);
+  color: var(--color-on-surface);
+}
+
+.player-edit-btn {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-container);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-on-surface-variant);
+  transition: all 150ms var(--ease-spring);
+  flex-shrink: 0;
+}
+
+.player-edit-btn:hover {
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-high);
+}
+
+.player-edit-btn:active {
+  transform: scale(0.92);
+}
+
+/* ==========================================================================
+   Info Hint Box
+   ========================================================================== */
+.info-box {
+  width: 100%;
+  background-color: rgba(255, 221, 180, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.info-box-icon {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.info-box-text {
+  font-size: var(--font-body-sm);
+  font-weight: var(--font-body-sm-weight);
+  line-height: var(--font-body-sm-line);
+  color: var(--color-on-tertiary-fixed-variant);
+  margin: 0;
+  flex: 1;
+}
+
+/* ==========================================================================
+   Primary CTA Button (Punchboard 3D Mechanical Lip)
+   ========================================================================== */
+.cta-container {
+  width: 100%;
+  padding-top: var(--space-xs);
+  display: flex;
+  flex-direction: column;
+}
+
+.cta-button {
+  width: 100%;
+  height: 56px;
+  padding: 0 var(--space-lg);
+  border: none;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary);
+  font-size: var(--font-headline-sm);
+  font-weight: var(--font-headline-sm-weight);
+  line-height: var(--font-headline-sm-line);
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-btn-primary);
+  transition: all 150ms var(--ease-spring);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.cta-button:active {
+  transform: translateY(3px);
+  box-shadow: var(--shadow-btn-primary-active);
+}
+
+.cta-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 250ms var(--ease-spring);
+}
+
+.cta-button:hover .cta-button-icon:first-child {
+  transform: rotate(45deg);
+}
+
+.cta-button:hover .cta-button-icon:last-child {
+  transform: translateX(4px);
+}
+
+.cta-button-text {
+  flex: 1;
+  text-align: center;
+  font-size: var(--font-headline-sm);
+  font-weight: var(--font-headline-sm-weight);
+}
+
+/* ==========================================================================
+   Footer Microcopy
+   ========================================================================== */
+.footer-text {
+  text-align: center;
+  font-size: var(--font-body-sm);
+  font-weight: var(--font-body-sm-weight);
+  line-height: var(--font-body-sm-line);
+  color: var(--color-outline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+/* ==========================================================================
+   Responsive Viewport Refinements
+   ========================================================================== */
+@media (max-width: 360px) {
+  .container-main {
+    gap: var(--space-md);
+    padding: var(--space-gutter-mobile);
+  }
+
+  .player-count-button {
+    font-size: 11px;
+    padding: 0.5rem 0.25rem;
+    gap: 2px;
+  }
+
+  .heading-section-title {
+    font-size: var(--font-headline-sm);
+  }
+
+  .player-card {
+    padding: 0.75rem;
+  }
+
+  .player-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+}
