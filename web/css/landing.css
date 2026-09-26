@@ -1,0 +1,241 @@
+/* JelajahKita Landing — Vanilla port of Stitch (Tailwind → semantic CSS) — offline only */
+@font-face{font-family:'Plus Jakarta Sans';src:url('../assets/fonts/PlusJakartaSans-Variable.woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Plus Jakarta Sans';src:url('../assets/fonts/PlusJakartaSans-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Plus Jakarta Sans';src:url('../assets/fonts/PlusJakartaSans-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Plus Jakarta Sans';src:url('../assets/fonts/PlusJakartaSans-SemiBold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Plus Jakarta Sans';src:url('../assets/fonts/PlusJakartaSans-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Plus Jakarta Sans';src:url('../assets/fonts/PlusJakartaSans-ExtraBold.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#062919;--primary-container:#1e3f2d;--primary-fixed:#c6ecd2;--primary-fixed-dim:#aacfb6;
+  --on-primary:#fff;--on-primary-fixed:#002111;--on-primary-fixed-variant:#2c4e3b;--on-primary-container:#86aa93;
+  --secondary:#99452c;--secondary-fixed:#ffdbd1;--secondary-fixed-dim:#ffb5a0;
+  --on-secondary:#fff;--on-secondary-fixed:#3b0900;--on-secondary-fixed-variant:#7b2e17;--on-secondary-container:#762b14;
+  --tertiary:#331e00;--tertiary-fixed:#ffddb4;--tertiary-fixed-dim:#ffb955;--tertiary-container:#503200;
+  --on-tertiary:#fff;--on-tertiary-fixed:#291800;--on-tertiary-fixed-variant:#633f00;--on-tertiary-container:#d6952f;
+  --surface:#fdf9f4;--surface-bright:#fdf9f4;--surface-dim:#ddd9d5;--surface-container:#f1ede8;--surface-container-low:#f7f3ee;--surface-container-lowest:#fff;--surface-container-high:#ece7e3;--surface-container-highest:#e6e2dd;--surface-variant:#e6e2dd;--surface-tint:#446651;
+  --on-surface:#1c1c19;--on-surface-variant:#424843;--outline:#727973;--outline-variant:#c1c8c1;--inverse-surface:#31302d;--inverse-on-surface:#f4f0eb;--inverse-primary:#aacfb6;
+}
+html,body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--on-surface);background:var(--surface);overflow-x:hidden;line-height:1.6}
+a{color:inherit}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+/* header — stitch: fixed, max-w-7xl, lg nav, lang pill, CTA */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(253,249,244,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 8px rgba(44,43,40,.05)}
+.header-inner{max-width:1280px;margin:0 auto;padding:.85rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand-mark{width:32px;height:32px;border-radius:8px;background:var(--primary-container);color:var(--primary-fixed-dim);display:grid;place-items:center;font-weight:800;font-size:.75rem;letter-spacing:.04em}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-title{font-weight:800;font-size:1rem;color:var(--primary);letter-spacing:-.02em}
+.brand-sub{font-size:.68rem;color:var(--on-surface-variant);font-weight:500}
+.header-nav{display:none;align-items:center;gap:.25rem;padding:.25rem;background:var(--surface-container-low);border-radius:9999px;box-shadow:0 1px 0 #e6e2dd}
+.header-nav a{padding:.4rem .85rem;border-radius:9999px;font-size:.78rem;font-weight:600;color:var(--on-surface-variant);text-decoration:none}
+.header-nav a.active,.header-nav a[aria-current="page"]{background:var(--surface-container-high);color:var(--primary);font-weight:700}
+.header-actions{display:flex;align-items:center;gap:.6rem}
+.lang-pill{display:flex;align-items:center;background:var(--surface-container);padding:.2rem;border-radius:9999px;box-shadow:0 1px 0 #ddd9d5}
+.lang-btn{border:0;background:none;padding:.2rem .7rem;border-radius:9999px;font:700 .72rem 'Plus Jakarta Sans',sans-serif;color:var(--on-surface-variant);cursor:pointer}
+.lang-btn.active{background:var(--surface-container-lowest);color:var(--primary);box-shadow:0 1px 2px rgba(44,43,40,.08)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;border:0;border-radius:9999px;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn-primary{background:var(--primary);color:var(--on-primary);padding:.85rem 1.6rem;font-size:.92rem;box-shadow:0 4px 0 #002111}
+.btn-primary:hover{transform:translateY(1px);box-shadow:0 2px 0 #002111}
+.btn-primary:active{transform:translateY(3px);box-shadow:none}
+.btn-ghost{background:var(--surface-container-low);color:var(--primary);padding:.85rem 1.3rem;font-size:.88rem;box-shadow:0 2px 0 #e6e2dd}
+.btn-sm{padding:.6rem 1rem;font-size:.82rem}
+.ico{width:1em;height:1em;display:inline-block;vertical-align:middle;flex-shrink:0}
+@media(min-width:1024px){.header-nav{display:flex}.header-inner{padding:.85rem 1.25rem}}
+.main{padding-top:4.2rem}
+/* hero — stitch: bg-surface, ambient blurs, 12-col grid */
+.hero{position:relative;overflow:hidden;background:var(--surface);padding:1.75rem 0 2rem}
+.hero-blur{position:absolute;border-radius:50%;filter:blur(42px);pointer-events:none}
+.hero-blur-a{width:24rem;height:24rem;left:-8rem;top:-8rem;background:var(--secondary-fixed);opacity:.38}
+.hero-blur-b{width:32rem;height:32rem;right:-8rem;top:30%;background:var(--tertiary-fixed);opacity:.28}
+.hero-inner{max-width:1280px;margin:0 auto;padding:0 1rem;position:relative}
+.hero-grid{display:grid;gap:1.75rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .75rem;border-radius:9999px;background:var(--surface-container-high);color:var(--primary);font:700 .68rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 2px 0 #ddd9d5}
+.hero-h1{font-size:2.15rem;font-weight:800;color:var(--primary);letter-spacing:-.03em;line-height:1.05}
+.hero-tagline{font-size:1.15rem;font-weight:700;color:var(--secondary);margin-top:.15rem}
+.hero-desc{font-size:.96rem;color:var(--on-surface-variant);line-height:1.7;max-width:34rem;margin-top:.6rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}
+.hero-specs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.spec{inline-size:fit-content;display:inline-flex;align-items:center;gap:.3rem;padding:.3rem .6rem;border-radius:9999px;background:var(--surface-container-low);box-shadow:0 1px 0 #e6e2dd;font:500 .78rem 'Plus Jakarta Sans',sans-serif;color:var(--on-surface-variant)}
+.pawn-legend{margin-top:.85rem;background:var(--surface-container-lowest);border-radius:.75rem;padding:.75rem;box-shadow:0 3px 0 #e6e2dd,0 8px 16px rgba(44,43,40,.04)}
+.pawn-legend-label{font:700 .62rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--outline);margin-bottom:.4rem}
+.pawn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.4rem}
+.pawn-item{display:flex;align-items:center;gap:.4rem;font:600 .82rem 'Plus Jakarta Sans',sans-serif;color:var(--on-surface)}
+.pawn-dot{width:.9rem;height:.9rem;border-radius:50%;box-shadow:0 2px 0 rgba(0,0,0,.18);flex-shrink:0}
+@media(min-width:768px){.hero{padding:2rem 0 2.2rem}.hero-inner{padding:0 1.25rem}.hero-h1{font-size:2.6rem}.pawn-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1024px){.hero-grid{grid-template-columns:5fr 7fr}}
+/* board mat — stitch: cardstock mat, header strip, canvas, track, card+die, bottom pill */
+.board-mat{position:relative;background:var(--surface-container-low);border-radius:1rem;padding:.75rem;box-shadow:0 8px 0 #ddd9d5,0 20px 32px rgba(44,43,40,.12)}
+@media(min-width:640px){.board-mat{padding:1rem 1.1rem}}
+.board-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding-bottom:.6rem;margin-bottom:.6rem;flex-wrap:wrap}
+.board-head-left{display:flex;align-items:center;gap:.4rem;font-weight:700;color:var(--primary)}
+.board-head-title{font-size:.92rem}
+.board-pill{font:700 .68rem 'Plus Jakarta Sans',sans-serif;padding:.2rem .55rem;border-radius:9999px;background:var(--surface-container-high);color:var(--on-surface-variant)}
+.board-canvas{position:relative;background:var(--surface-container-lowest);border-radius:.75rem;padding:.65rem;box-shadow:inset 0 2px 4px rgba(44,43,40,.06);overflow:hidden}
+.board-canvas::before{content:'';position:absolute;inset:0;opacity:.03;background:radial-gradient(#1c1c19 1px,transparent 1px);background-size:16px 16px;pointer-events:none}
+.track{position:relative;display:flex;flex-direction:column;gap:.55rem}
+.track-row{display:grid;grid-template-columns:repeat(7,1fr);gap:.25rem}
+@media(min-width:640px){.track-row{gap:.4rem}}
+.tile{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-radius:.5rem;padding:.2rem;position:relative}
+.tile-label{font:700 .52rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.tile-num{font:800 .72rem 'Plus Jakarta Sans',sans-serif;line-height:1;margin-top:.15rem}
+.tile-ico{margin-top:.15rem;line-height:1}
+.tile-ico .ico{width:13px;height:13px}
+.tile-start{background:var(--primary);color:var(--on-primary);box-shadow:0 3px 0 #002111}
+.tile-start .tile-label{color:var(--tertiary-fixed-dim)}
+.tile-h{background:var(--secondary-fixed);color:var(--on-secondary-fixed-variant);box-shadow:0 2px 0 #ffb5a0}
+.tile-k{background:var(--tertiary-fixed);color:var(--on-tertiary-fixed-variant);box-shadow:0 2px 0 #ffb955}
+.tile-m{background:var(--surface-container-high);color:var(--on-surface);box-shadow:0 2px 0 #ddd9d5}
+.tile-a{background:var(--surface-container-high);color:var(--on-surface);box-shadow:0 2px 0 #ddd9d5}
+.tile-bonus{background:var(--primary-fixed);color:var(--on-primary-fixed-variant);box-shadow:0 2px 0 var(--primary-fixed-dim)}
+.tile-rehat{background:var(--surface-container-highest);color:var(--on-surface);box-shadow:0 2px 0 #ddd9d5}
+.tile-finish{background:var(--secondary);color:var(--on-secondary);box-shadow:0 3px 0 #762b14}
+.pawn-token{position:absolute;top:-6px;right:-4px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font:800 .58rem 'Plus Jakarta Sans',sans-serif;color:#fff;box-shadow:0 2px 0 rgba(0,0,0,.2);border:1.5px solid #fff}
+.pawn-token.papa{background:var(--primary-container)}
+.pawn-token.mama{background:var(--tertiary-container)}
+.pawn-token.dika{background:var(--secondary)}
+.pawn-token.siti{background:var(--surface-tint)}
+.pawn-pair{position:absolute;top:-6px;right:-4px;display:flex;gap:0;margin-left:0}
+.pawn-pair .pawn-token{position:static;width:16px;height:16px;font-size:.52rem;border-width:1.5px}
+.pawn-pair .pawn-token + .pawn-token{margin-left:-5px}
+.board-accessories{margin-top:.7rem;padding-top:.6rem;display:flex;flex-direction:column;gap:.7rem}
+@media(min-width:640px){.board-accessories{flex-direction:row;align-items:center;justify-content:space-between}}
+.drawn-card{flex:1;display:flex;align-items:center;gap:.6rem;padding:.6rem;border-radius:.75rem;background:var(--surface-container-low);box-shadow:0 3px 0 #ddd9d5}
+.drawn-card-icon{width:2.6rem;height:3rem;border-radius:.5rem;background:var(--secondary-fixed);color:var(--secondary);display:grid;place-items:center;box-shadow:0 2px 0 #ffb5a0;flex-shrink:0}
+.drawn-card-meta{min-width:0}
+.drawn-card-kicker{font:700 .58rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--secondary);display:block}
+.drawn-card-quote{font:600 .78rem 'Plus Jakarta Sans',sans-serif;color:var(--on-surface);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.die-wrap{display:flex;align-items:center;gap:.6rem;align-self:flex-end}
+@media(min-width:640px){.die-wrap{align-self:center}}
+.die-meta{text-align:right;line-height:1.2}
+.die-kicker{font:700 .58rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--outline)}
+.die-label{font:700 .82rem 'Plus Jakarta Sans',sans-serif;color:var(--primary)}
+.die{width:3.2rem;height:3.2rem;border-radius:.7rem;background:var(--surface-container-lowest);box-shadow:0 6px 0 #ddd9d5,0 10px 16px rgba(44,43,40,.12);display:grid;grid-template-columns:repeat(3,1fr);gap:.18rem;padding:.45rem;transform:rotate(6deg)}
+.die-pip{width:.5rem;height:.5rem;border-radius:50%;background:var(--primary);place-self:center}
+.mat-foot{margin-top:.6rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-size:.72rem;color:var(--on-surface-variant);flex-wrap:wrap}
+.mat-foot strong{color:var(--primary)}
+/* intro */
+.intro{padding:2.2rem 0;background:var(--surface-container-low);text-align:center}
+.intro-kicker{font:700 .7rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--secondary)}
+.intro-title{font:800 1.7rem 'Plus Jakarta Sans',sans-serif;color:var(--primary);letter-spacing:-.02em;margin-top:.25rem}
+.intro-desc{font-size:.95rem;color:var(--on-surface-variant);line-height:1.7;max-width:38rem;margin:.5rem auto 0}
+/* categories — stitch: 4 tactile cards */
+.section{padding:2rem 0}
+.section-head{max-width:36rem;margin:0 0 1.2rem}
+.section-kicker{font:700 .68rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--secondary)}
+.section-title{font:800 1.6rem 'Plus Jakarta Sans',sans-serif;color:var(--primary);letter-spacing:-.02em;margin-top:.2rem}
+.section-desc{font-size:.92rem;color:var(--on-surface-variant);line-height:1.6;margin-top:.35rem}
+.cards-grid{display:grid;gap:1rem}
+@media(min-width:640px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.cards-grid{grid-template-columns:repeat(4,1fr)}}
+.deck{position:relative;background:var(--surface-container-lowest);border-radius:1rem;padding:1.1rem;display:flex;flex-direction:column;justify-content:space-between;transition:transform .15s}
+.deck:hover{transform:translateY(-3px)}
+.deck-hati{box-shadow:0 4px 0 #ffb5a0,0 8px 16px rgba(44,43,40,.06)}
+.deck-cerita{box-shadow:0 4px 0 #ffb955,0 8px 16px rgba(44,43,40,.06)}
+.deck-mimpi{box-shadow:0 4px 0 #aacfb6,0 8px 16px rgba(44,43,40,.06)}
+.deck-aksi{box-shadow:0 4px 0 #062919,0 8px 16px rgba(44,43,40,.06)}
+.deck-top{display:flex;align-items:center;justify-content:space-between}
+.deck-badge{padding:.15rem .5rem;border-radius:9999px;font:700 .68rem 'Plus Jakarta Sans',sans-serif;text-transform:uppercase}
+.deck-hati .deck-badge{background:var(--secondary-fixed);color:var(--on-secondary-fixed-variant)}
+.deck-cerita .deck-badge{background:var(--tertiary-fixed);color:var(--on-tertiary-fixed-variant)}
+.deck-mimpi .deck-badge{background:var(--primary-fixed);color:var(--on-primary-fixed-variant)}
+.deck-aksi .deck-badge{background:var(--primary-container);color:var(--on-primary-container)}
+.deck-body{margin-top:.7rem}
+.deck-h3{font:700 .98rem 'Plus Jakarta Sans',sans-serif;color:var(--on-surface)}
+.deck-p{font-size:.84rem;color:var(--on-surface-variant);line-height:1.5;margin-top:.25rem}
+.deck-prompt{margin-top:.7rem;padding:.7rem;border-radius:.7rem;background:var(--surface-container-low);box-shadow:inset 0 1px 3px rgba(44,43,40,.04)}
+.deck-prompt-kicker{font:700 .58rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:.25rem}
+.deck-hati .deck-prompt-kicker{color:var(--secondary)}
+.deck-cerita .deck-prompt-kicker{color:var(--on-tertiary-container)}
+.deck-mimpi .deck-prompt-kicker{color:var(--surface-tint)}
+.deck-aksi .deck-prompt-kicker{color:var(--primary)}
+.deck-prompt q{font:500 .88rem 'Plus Jakarta Sans',sans-serif;color:var(--on-surface);font-style:italic}
+.deck-foot{margin-top:.7rem;padding-top:.6rem;display:flex;align-items:center;justify-content:space-between;font:500 .75rem 'Plus Jakarta Sans',sans-serif;color:var(--outline)}
+.deck-dot{width:.7rem;height:.7rem;border-radius:50%}
+/* steps */
+.steps-grid{display:grid;gap:1rem}
+@media(min-width:768px){.steps-grid{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--surface-container-low);border-radius:1rem;padding:1.1rem;box-shadow:0 3px 0 #ddd9d5;display:flex;flex-direction:column;justify-content:space-between}
+.step-num{width:2.6rem;height:2.6rem;border-radius:.6rem;background:var(--surface-container-lowest);display:grid;place-items:center;font:800 1rem 'Plus Jakarta Sans',sans-serif;box-shadow:0 2px 0 #ddd9d5}
+.step-num.accent{color:var(--secondary)}
+.step-num.dark{background:var(--primary);color:var(--on-primary);box-shadow:0 2px 0 #002111}
+.step-h3{font:700 .95rem 'Plus Jakarta Sans',sans-serif;color:var(--primary);margin-top:.6rem}
+.step-p{font-size:.84rem;color:var(--on-surface-variant);line-height:1.5;margin-top:.25rem}
+.step-meta{margin-top:.7rem;padding-top:.4rem;display:flex;align-items:center;gap:.3rem;font:600 .74rem 'Plus Jakarta Sans',sans-serif}
+.step-meta.hati{color:var(--primary)}
+.step-meta.cerita{color:var(--secondary)}
+.step-meta.mimpi{color:var(--on-tertiary-container)}
+.step-meta.aksi{color:var(--primary)}
+/* philosophy — stitch: bg-primary-container, left narrative + right card */
+.philosophy{padding:2rem 0;background:var(--primary-container);color:var(--on-primary)}
+.philo-grid{display:grid;gap:1.5rem;align-items:center}
+@media(min-width:1024px){.philo-grid{grid-template-columns:7fr 5fr}}
+.philo-badge{display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .65rem;border-radius:9999px;background:var(--primary);color:var(--tertiary-fixed);font:700 .68rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.philo-h2{font:800 1.55rem 'Plus Jakarta Sans',sans-serif;color:var(--surface-container-lowest);line-height:1.2;margin-top:.6rem}
+.philo-desc{font-size:.92rem;color:var(--on-primary-container);line-height:1.7;margin-top:.6rem}
+.philo-features{display:grid;gap:.7rem;margin-top:1rem}
+@media(min-width:640px){.philo-features{grid-template-columns:repeat(3,1fr)}}
+.feat{padding:.75rem;border-radius:.75rem;background:var(--primary);box-shadow:inset 0 1px 2px rgba(0,0,0,.2)}
+.feat-ico{color:var(--tertiary-fixed)}
+.feat-h3{font:700 .88rem 'Plus Jakarta Sans',sans-serif;color:var(--surface-container-lowest);margin-top:.35rem}
+.feat-p{font-size:.76rem;color:var(--on-primary-container);margin-top:.2rem;line-height:1.4}
+.philo-card{position:relative;background:var(--primary);border-radius:1.4rem;padding:1.2rem;box-shadow:0 8px 0 #002111,0 20px 32px rgba(0,0,0,.25);text-align:center}
+.philo-card-icon{width:4.2rem;height:4.2rem;margin:0 auto;border-radius:1rem;background:var(--secondary);display:grid;place-items:center;box-shadow:0 4px 0 #762b14}
+.philo-card-kicker{font:700 .62rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--tertiary-fixed);margin-top:.7rem;display:block}
+.philo-card-title{font:700 1.05rem 'Plus Jakarta Sans',sans-serif;color:var(--surface-container-lowest);margin-top:.25rem}
+.philo-card-desc{font-size:.82rem;color:var(--on-primary-container);margin-top:.25rem}
+.philo-pawns{display:flex;align-items:flex-end;justify-content:center;gap:.6rem;margin-top:1rem}
+.pawn-stack{display:flex;flex-direction:column;align-items:center;gap:.25rem}
+.pawn-circle{width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;font:700 .78rem 'Plus Jakarta Sans',sans-serif;box-shadow:0 3px 0 rgba(0,0,0,.2)}
+.pawn-label{font:600 .62rem 'Plus Jakarta Sans',sans-serif;color:var(--tertiary-fixed)}
+.philo-quote{margin-top:.9rem;padding:.6rem;border-radius:.6rem;background:var(--primary-container);color:var(--tertiary-fixed);font:500 .78rem 'Plus Jakarta Sans',sans-serif;font-style:italic}
+/* experience preview — 3 cards */
+.experience{padding:2rem 0;background:var(--surface)}
+.exp-head{display:flex;flex-direction:column;gap:.7rem}
+@media(min-width:768px){.exp-head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
+.exp-cards{display:grid;gap:1rem;margin-top:1.1rem}
+@media(min-width:1024px){.exp-cards{grid-template-columns:repeat(3,1fr)}}
+.exp-card{background:var(--surface-container-low);border-radius:1rem;padding:1.1rem;box-shadow:0 4px 0 #ddd9d5;display:flex;flex-direction:column;justify-content:space-between}
+.exp-icon{width:2.4rem;height:2.4rem;border-radius:.6rem;display:grid;place-items:center;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.exp-icon.hati{background:var(--secondary-fixed);color:var(--secondary);box-shadow:0 2px 0 #ffb5a0}
+.exp-icon.cerita{background:var(--tertiary-fixed);color:var(--on-tertiary-container);box-shadow:0 2px 0 #ffb955}
+.exp-icon.mimpi{background:var(--primary-fixed);color:var(--primary);box-shadow:0 2px 0 #aacfb6}
+.exp-h3{font:700 .95rem 'Plus Jakarta Sans',sans-serif;color:var(--primary);margin-top:.6rem}
+.exp-p{font-size:.84rem;color:var(--on-surface-variant);line-height:1.5;margin-top:.25rem}
+.exp-mock{margin-top:.7rem;padding:.7rem;border-radius:.7rem;background:var(--surface-container-lowest);box-shadow:0 3px 0 #e6e2dd}
+.exp-mock-badge{font:700 .58rem 'Plus Jakarta Sans',sans-serif;padding:.12rem .4rem;border-radius:9999px}
+.exp-mock q{font:600 .88rem 'Plus Jakarta Sans',sans-serif;color:var(--on-surface);display:block;margin-top:.3rem}
+/* android — stitch: rounded card with icon, tag, text, button */
+.android{padding:1rem 0 1.2rem;background:var(--surface)}
+.android-card{display:flex;flex-direction:column;gap:.9rem;align-items:stretch;background:var(--surface-container-low);border-radius:1rem;padding:1rem;box-shadow:0 3px 0 #ddd9d5}
+@media(min-width:768px){.android-card{flex-direction:row;align-items:center;justify-content:space-between}}
+.android-left{display:flex;gap:.7rem;align-items:flex-start}
+.android-icon{width:2.8rem;height:2.8rem;border-radius:.7rem;background:var(--primary-container);color:var(--on-primary-container);display:grid;place-items:center;box-shadow:0 2px 0 #062919;flex-shrink:0}
+.android-title{font:700 .95rem 'Plus Jakarta Sans',sans-serif;color:var(--primary);display:flex;flex-wrap:wrap;align-items:center;gap:.4rem}
+.android-tag{padding:.15rem .45rem;border-radius:9999px;background:var(--tertiary-fixed);color:var(--on-tertiary-fixed);font:700 .62rem 'Plus Jakarta Sans',sans-serif;text-transform:uppercase}
+.android-desc{font-size:.84rem;color:var(--on-surface-variant);margin-top:.2rem}
+.android-actions{display:flex;gap:.5rem;flex-shrink:0}
+/* final CTA — stitch: bg-surface-container-high, centered */
+.cta{padding:2.2rem 0;background:var(--surface-container-high);text-align:center}
+.cta-icon{width:3.4rem;height:3.4rem;margin:0 auto;border-radius:1rem;background:var(--primary);color:var(--tertiary-fixed-dim);display:grid;place-items:center;box-shadow:0 4px 0 #002111}
+.cta-h2{font:800 1.55rem 'Plus Jakarta Sans',sans-serif;color:var(--primary);letter-spacing:-.02em;margin-top:.7rem}
+.cta-p{font-size:.95rem;color:var(--on-surface-variant);max-width:34rem;margin:.4rem auto 0}
+.cta-actions{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
+.cta-foot{font:500 .74rem 'Plus Jakarta Sans',sans-serif;color:var(--outline);margin-top:.7rem}
+/* footer — stitch: 4-col grid */
+.site-footer{background:var(--surface-container-low);box-shadow:0 -2px 12px rgba(44,43,40,.03);margin-top:1.5rem}
+.footer-grid{display:grid;gap:1.2rem;padding:1.5rem 1rem}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;padding:1.6rem 1.25rem}}
+.footer-brand-row{display:flex;align-items:center;gap:.5rem}
+.footer-brand{font:800 .95rem 'Plus Jakarta Sans',sans-serif;color:var(--primary)}
+.footer-desc{font-size:.84rem;color:var(--on-surface-variant);line-height:1.5;margin-top:.4rem;max-width:28rem}
+.footer-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.footer-badge{display:inline-flex;align-items:center;gap:.25rem;padding:.3rem .55rem;border-radius:9999px;background:var(--surface-container);font:500 .74rem 'Plus Jakarta Sans',sans-serif;color:var(--on-surface-variant)}
+.footer-col-title{font:700 .82rem 'Plus Jakarta Sans',sans-serif;color:var(--primary)}
+.footer-links{list-style:none;margin-top:.4rem;display:flex;flex-direction:column;gap:.3rem}
+.footer-links a{font-size:.84rem;color:var(--on-surface-variant);text-decoration:none}
+.footer-links a:hover{color:var(--primary)}
+.footer-bottom{border-top:1px solid var(--surface-container-high);padding:.9rem 1rem;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;align-items:center;font-size:.74rem;color:var(--outline)}
+/* utils */
+.container-narrow{max-width:1280px;margin:0 auto;padding:0 1rem}
+@media(min-width:768px){.container-narrow{padding:0 1.25rem}}
