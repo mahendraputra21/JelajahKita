@@ -1,0 +1,8 @@
+{
+  "appId": "com.dewamahendra.jelajahkita",
+  "appName": "JelajahKita",
+  "webDir": "web",
+  "server": {
+    "cleartext": true
+  }
+}

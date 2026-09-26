@@ -79,7 +79,7 @@
   padding: var(--space-md);
   box-shadow: var(--card-shadow-primary), var(--card-shadow-secondary);
   animation: cardSlideIn 0.3s ease-out;
-  margin: 5px auto auto; /* +5px top offset for mobile status bar */
+  margin: 48px auto auto; 
 }
 
 @keyframes cardSlideIn {
