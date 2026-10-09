@@ -1,0 +1,386 @@
+[
+  {
+    "id": "HATI-01",
+    "category": "HATI",
+    "prompt": {
+      "id": "Siapa yang kamu sayang? Tunjuk orangnya.",
+      "en": "Who do you love? Point to them."
+    },
+    "guidance": {
+      "id": "Anak boleh menunjuk, melambaikan tangan, atau memeluk jika nyaman.",
+      "en": "The child can point, wave, or give a hug if comfortable."
+    }
+  },
+  {
+    "id": "HATI-02",
+    "category": "HATI",
+    "prompt": {
+      "id": "Apa yang bikin kamu senang?",
+      "en": "What makes you happy?"
+    },
+    "guidance": {
+      "id": "Boleh jawab dengan kata, suara, atau ekspresi wajah.",
+      "en": "They can answer with a word, a sound, or a facial expression."
+    }
+  },
+  {
+    "id": "HATI-03",
+    "category": "HATI",
+    "prompt": {
+      "id": "Ayo bilang, “Terima kasih!” kepada seseorang.",
+      "en": "Let’s say “Thank you!” to someone."
+    },
+    "guidance": {
+      "id": "Orang dewasa boleh memberi contoh atau membantu mengucapkannya.",
+      "en": "An adult can model the words or help say them."
+    }
+  },
+  {
+    "id": "HATI-04",
+    "category": "HATI",
+    "prompt": {
+      "id": "Kamu suka dipeluk, tos, atau dilambaikan?",
+      "en": "Do you like a hug, a high-five, or a wave?"
+    },
+    "guidance": {
+      "id": "Biarkan anak memilih; pelukan hanya jika anak mau.",
+      "en": "Let the child choose; hugs are only if they want one."
+    }
+  },
+  {
+    "id": "HATI-05",
+    "category": "HATI",
+    "prompt": {
+      "id": "Siapa yang suka bermain denganmu?",
+      "en": "Who likes to play with you?"
+    },
+    "guidance": {
+      "id": "Anak boleh menunjuk orang yang dimaksud.",
+      "en": "The child can point to the person."
+    }
+  },
+  {
+    "id": "HATI-06",
+    "category": "HATI",
+    "prompt": {
+      "id": "Ayo beri seseorang senyuman.",
+      "en": "Let’s give someone a smile."
+    },
+    "guidance": {
+      "id": "Semua boleh ikut tersenyum bersama.",
+      "en": "Everyone can join in and smile together."
+    }
+  },
+  {
+    "id": "HATI-07",
+    "category": "HATI",
+    "prompt": {
+      "id": "Apa warna yang kamu suka?",
+      "en": "What color do you like?"
+    },
+    "guidance": {
+      "id": "Tunjukkan benda dengan warna itu jika ada.",
+      "en": "Point to something in that color if one is nearby."
+    }
+  },
+  {
+    "id": "HATI-08",
+    "category": "HATI",
+    "prompt": {
+      "id": "Apa yang kamu suka: bermain, bernyanyi, atau membaca buku?",
+      "en": "What do you like: playing, singing, or reading a book?"
+    },
+    "guidance": {
+      "id": "Orang dewasa boleh menyebut pilihan satu per satu.",
+      "en": "An adult can say the choices one at a time."
+    }
+  },
+  {
+    "id": "CERITA-01",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Apa mainan favoritmu?",
+      "en": "What is your favorite toy?"
+    },
+    "guidance": {
+      "id": "Anak boleh mengambil atau menunjuk mainannya.",
+      "en": "The child can pick up or point to the toy."
+    }
+  },
+  {
+    "id": "CERITA-02",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Hewan apa yang kamu suka?",
+      "en": "What animal do you like?"
+    },
+    "guidance": {
+      "id": "Tirukan suara hewannya bersama-sama.",
+      "en": "Make the animal’s sound together."
+    }
+  },
+  {
+    "id": "CERITA-03",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Makanan apa yang paling kamu suka?",
+      "en": "What food do you like best?"
+    },
+    "guidance": {
+      "id": "Boleh menyebut nama makanan atau menunjuk gambar/benda.",
+      "en": "The child can name a food or point to a picture or object."
+    }
+  },
+  {
+    "id": "CERITA-04",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Apa yang seru kamu lakukan hari ini?",
+      "en": "What was fun to do today?"
+    },
+    "guidance": {
+      "id": "Kalau anak belum bisa bercerita, orang dewasa boleh memberi dua pilihan sederhana.",
+      "en": "If the child can’t tell a story yet, an adult can offer two simple choices."
+    }
+  },
+  {
+    "id": "CERITA-05",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Kamu suka lagu apa?",
+      "en": "What song do you like?"
+    },
+    "guidance": {
+      "id": "Nyanyikan sedikit lagu itu bersama-sama.",
+      "en": "Sing a little of that song together."
+    }
+  },
+  {
+    "id": "CERITA-06",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Kamu suka kucing atau anjing?",
+      "en": "Do you like cats or dogs?"
+    },
+    "guidance": {
+      "id": "Anak boleh menunjuk salah satu atau memilih yang lain.",
+      "en": "The child can point to one or choose something else."
+    }
+  },
+  {
+    "id": "CERITA-07",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Pernah lihat kupu-kupu? Warnanya apa?",
+      "en": "Have you seen a butterfly? What color was it?"
+    },
+    "guidance": {
+      "id": "Tunjukkan gambar kupu-kupu dan pilih warna bersama jika perlu.",
+      "en": "Show a butterfly picture and choose a color together if needed."
+    }
+  },
+  {
+    "id": "CERITA-08",
+    "category": "CERITA",
+    "prompt": {
+      "id": "Ayo ceritakan sesuatu dengan satu kata atau satu suara!",
+      "en": "Tell us something with one word or one sound!"
+    },
+    "guidance": {
+      "id": "Suara, gerakan, atau menunjuk juga termasuk jawaban.",
+      "en": "A sound, gesture, or pointing also counts as an answer."
+    }
+  },
+  {
+    "id": "MIMPI-01",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kalau jalan-jalan, kamu mau ke pantai atau taman?",
+      "en": "If we go out, would you like the beach or the park?"
+    },
+    "guidance": {
+      "id": "Tunjukkan gambar jika membantu anak memilih.",
+      "en": "Show pictures if that helps the child choose."
+    }
+  },
+  {
+    "id": "MIMPI-02",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kamu mau bermain bola atau gelembung sabun?",
+      "en": "Would you like to play with a ball or bubbles?"
+    },
+    "guidance": {
+      "id": "Pilih kegiatan yang aman dan sesuai usia.",
+      "en": "Choose an activity that is safe and age-appropriate."
+    }
+  },
+  {
+    "id": "MIMPI-03",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kalau punya balon, kamu mau warna apa?",
+      "en": "If you had a balloon, what color would you choose?"
+    },
+    "guidance": {
+      "id": "Anak boleh menyebut atau menunjuk warna.",
+      "en": "The child can name or point to a color."
+    }
+  },
+  {
+    "id": "MIMPI-04",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kamu mau membaca buku atau menyanyi bersama?",
+      "en": "Would you like to read a book or sing together?"
+    },
+    "guidance": {
+      "id": "Orang dewasa boleh membantu dengan dua pilihan.",
+      "en": "An adult can help by offering two choices."
+    }
+  },
+  {
+    "id": "MIMPI-05",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kalau kita bikin benteng dari bantal, siapa mau ikut?",
+      "en": "If we build a pillow fort, who wants to join?"
+    },
+    "guidance": {
+      "id": "Ajak semua pemain membuat benteng kecil yang aman.",
+      "en": "Invite everyone to make a small, safe fort."
+    }
+  },
+  {
+    "id": "MIMPI-06",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Besok kamu mau bermain apa bersama keluarga?",
+      "en": "What would you like to play with your family tomorrow?"
+    },
+    "guidance": {
+      "id": "Boleh memilih permainan yang sudah dikenal.",
+      "en": "The child can choose a familiar game."
+    }
+  },
+  {
+    "id": "MIMPI-07",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kalau bisa jadi hewan, kamu mau jadi apa?",
+      "en": "If you could be an animal, what would you be?"
+    },
+    "guidance": {
+      "id": "Anak boleh menirukan gerakan atau suara hewan.",
+      "en": "The child can imitate the animal’s movement or sound."
+    }
+  },
+  {
+    "id": "MIMPI-08",
+    "category": "MIMPI",
+    "prompt": {
+      "id": "Kita mau menggambar apa bersama?",
+      "en": "What shall we draw together?"
+    },
+    "guidance": {
+      "id": "Pilih benda sederhana seperti matahari, rumah, atau bunga.",
+      "en": "Choose something simple, like the sun, a house, or a flower."
+    }
+  },
+  {
+    "id": "AKSI-01",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Ayo tepuk tangan tiga kali!",
+      "en": "Let’s clap three times!"
+    },
+    "guidance": {
+      "id": "Lakukan bersama; anak boleh meniru sesuai kemampuannya.",
+      "en": "Do it together; the child can copy as able."
+    }
+  },
+  {
+    "id": "AKSI-02",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Ayo bergerak seperti kelinci!",
+      "en": "Let’s move like a bunny!"
+    },
+    "guidance": {
+      "id": "Anak boleh melompat kecil atau cukup menggerakkan tangan.",
+      "en": "The child can do a little hop or simply move their hands."
+    }
+  },
+  {
+    "id": "AKSI-03",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Ayo buat suara kucing: meong!",
+      "en": "Let’s sound like a cat: meow!"
+    },
+    "guidance": {
+      "id": "Semua pemain boleh menirukan suara kucing.",
+      "en": "Everyone can make a cat sound."
+    }
+  },
+  {
+    "id": "AKSI-04",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Ayo tunjuk hidung, lalu kepala!",
+      "en": "Point to your nose, then your head!"
+    },
+    "guidance": {
+      "id": "Orang dewasa boleh menunjukkan gerakannya terlebih dahulu.",
+      "en": "An adult can demonstrate first."
+    }
+  },
+  {
+    "id": "AKSI-05",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Ayo menari sambil mendengar lagu!",
+      "en": "Let’s dance to a song!"
+    },
+    "guidance": {
+      "id": "Gerakkan badan dengan cara yang nyaman dan aman.",
+      "en": "Move in whatever way feels comfortable and safe."
+    }
+  },
+  {
+    "id": "AKSI-06",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Ayo buat wajah lucu!",
+      "en": "Let’s make a funny face!"
+    },
+    "guidance": {
+      "id": "Semua pemain bergantian menunjukkan ekspresi lucu.",
+      "en": "Take turns making funny expressions."
+    }
+  },
+  {
+    "id": "AKSI-07",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Ayo tos dengan orang di sebelahmu, kalau dia mau!",
+      "en": "Give the person next to you a high-five, if they want one!"
+    },
+    "guidance": {
+      "id": "Bisa diganti dengan melambaikan tangan atau senyum.",
+      "en": "A wave or a smile can be used instead."
+    }
+  },
+  {
+    "id": "AKSI-08",
+    "category": "AKSI",
+    "prompt": {
+      "id": "Ayo sebut warna merah, lalu cari benda merah!",
+      "en": "Say “red,” then find something red!"
+    },
+    "guidance": {
+      "id": "Orang dewasa boleh membantu menunjuk benda di sekitar.",
+      "en": "An adult can help point out something nearby."
+    }
+  }
+]

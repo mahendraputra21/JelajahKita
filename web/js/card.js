@@ -13,7 +13,8 @@
   // Load card deck from JSON
   async function loadCardDeck() {
     try {
-      const response = await fetch('data/card-deck.json');
+      //const response = await fetch('data/card-deck.json');
+      const response = await fetch('data/jelajahkita-card-deck-anak-1-5plus.json');
       CARD_DECK = await response.json();
       console.log('[Card Modal] Loaded', CARD_DECK.length, 'cards');
     } catch (err) {
